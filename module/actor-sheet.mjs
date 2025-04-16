@@ -16,6 +16,8 @@ export class LODActorSheet extends ActorSheet {
     const context = super.getData();
     context.system = context.actor.system;
     context.system.notes = typeof context.system.notes === "string" ? context.system.notes : "";
+    context.owner = this.actor.isOwner;
+    context.editable = this.isEditable;
     console.log("LODActorSheet getData:", context);
     return context;
   }
@@ -50,14 +52,6 @@ export class LODActorSheet extends ActorSheet {
       recipes.splice(index, 1);
       await this.actor.update({ "system.recipes": recipes });
     });
-  }
-
-  async _updateObject(event, formData) {
-    // Ensure notes is updated from editor
-    if (formData["system.notes"] !== undefined) {
-      formData["system.notes"] = typeof formData["system.notes"] === "string" ? formData["system.notes"] : "";
-    }
-    return super._updateObject(event, formData);
   }
 
   _onChangeTab(event, tabs, active) {
