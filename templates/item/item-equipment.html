@@ -1,0 +1,47 @@
+<div class="equipment-details">
+  <!-- Row 1: Quantity | Enc | Cost | Ammo? | Treasure? -->
+  <div class="item-row">
+    <div class="field">
+      <label>Quantity</label>
+      <input name="system.quantity" type="number" value="{{system.quantity}}" placeholder="0" />
+    </div>
+    <div class="field">
+      <label>Enc</label>
+      <input name="system.enc" type="number" value="{{system.enc}}" placeholder="0" />
+    </div>
+    <div class="field">
+      <label>Cost</label>
+      <input name="system.cost" type="number" value="{{system.cost}}" placeholder="0" />
+    </div>
+    <div class="field">
+      <label>Ammo?</label>
+      <input name="system.ammo" type="checkbox" {{checked system.ammo}} />
+    </div>
+    <div class="field">
+      <label>Treasure?</label>
+      <input name="system.treasure" type="checkbox" {{checked system.treasure}} />
+    </div>
+  </div>
+
+  <!-- Row 2: Special -->
+  <div class="item-row">
+    <div class="field full-width">
+      <label>Special</label>
+      <input name="system.special" type="text" value="{{system.special}}" placeholder="Special" />
+    </div>
+  </div>
+
+  <!-- Row 3: Availability | Durability -->
+  <div class="item-row">
+    <div class="field">
+      <label>Availability</label>
+      <select name="system.availability">
+        {{selectOptions availabilityOptions selected=system.availability localize=true}}
+      </select>
+    </div>
+    <div class="field">
+      <label>Durability</label>
+      <input name="system.dur" type="number" value="{{system.dur}}" placeholder="0" />
+    </div>
+  </div>
+</div>

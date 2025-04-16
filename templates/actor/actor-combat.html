@@ -1,0 +1,198 @@
+<div class="actor-combat">
+  <div class="weapons">
+    <h3>Equipped Weapons</h3>
+    <div class="weapons-header">
+      <span>Weapon</span>
+      <span>Hand/Slot</span>
+      <span>Damage</span>
+      <span>Durability</span>
+      <span>Special</span>
+    </div>
+    {{#each system.weapons as |weapon index|}}
+    <div class="weapon-item">
+      <div class="field">
+        <label>Name:</label>
+        <input type="text" name="system.weapons.{{index}}.name" value="{{weapon.name}}" placeholder="Sword">
+      </div>
+      <div class="field">
+        <label>Hand/Slot:</label>
+        <input type="text" name="system.weapons.{{index}}.slot" value="{{weapon.slot}}" placeholder="Main Hand">
+      </div>
+      <div class="field">
+        <label>1H/2H:</label>
+        <input type="text" name="system.weapons.{{index}}.hands" value="{{weapon.hands}}" placeholder="1H">
+      </div>
+      <div class="field">
+        <label>DMG:</label>
+        <input type="text" name="system.weapons.{{index}}.dmg" value="{{weapon.dmg}}" placeholder="1d8">
+      </div>
+      <div class="field">
+        <label>Class:</label>
+        <input type="text" name="system.weapons.{{index}}.class" value="{{weapon.class}}" placeholder="Melee">
+      </div>
+      <div class="field">
+        <label>ENC:</label>
+        <input type="number" name="system.weapons.{{index}}.enc" value="{{weapon.enc}}" placeholder="1">
+      </div>
+      <div class="field">
+        <label>Durability:</label>
+        <input type="number" name="system.weapons.{{index}}.durability" value="{{weapon.durability}}" placeholder="10">
+      </div>
+      <div class="field">
+        <label>Special:</label>
+        <input type="text" name="system.weapons.{{index}}.special" value="{{weapon.special}}" placeholder="None">
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <div class="armor">
+    <h3>Armor</h3>
+    <div class="armor-list">
+      <!-- Head -->
+      <div class="armor-section">
+        <div class="armor-header">
+          <span>Head</span>
+          <span>Defense</span>
+          <span>Durability</span>
+          <span>Special</span>
+        </div>
+      </div>
+      <!-- Arms -->
+      <div class="armor-section">
+        <div class="armor-header">
+          <span>Arms</span>
+          <span>Defense</span>
+          <span>Durability</span>
+          <span>Special</span>
+        </div>
+      </div>
+      <!-- Shield -->
+      <div class="armor-section">
+        <div class="armor-header">
+          <span>Shield</span>
+          <span>Defense</span>
+          <span>Durability</span>
+          <span>Special</span>
+        </div>
+      </div>
+      <!-- Torso -->
+      <div class="armor-section">
+        <div class="armor-header">
+          <span>Torso</span>
+          <span>Defense</span>
+          <span>Durability</span>
+          <span>Special</span>
+        </div>
+      </div>
+      <!-- Legs -->
+      <div class="armor-section">
+        <div class="armor-header">
+          <span>Legs</span>
+          <span>Defense</span>
+          <span>Durability</span>
+          <span>Special</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="quickslots">
+    <h3>Quickslot Items</h3>
+    <div class="quickslot-columns">
+      <div class="quickslot-column">
+        <div class="quickslot-header">
+          <span>Gear</span>
+          <span>Durability</span>
+        </div>
+        {{#each system.quickslots as |item index|}}
+          {{#if (lt index 5)}}
+            <div class="quickslot-item">
+              <div class="field">
+                <label>Item {{add index 1}}:</label>
+                <input type="text" name="system.quickslots.{{index}}.name" value="{{item.name}}" placeholder="Potion">
+              </div>
+              <div class="field">
+                <label>Durability:</label>
+                <input type="number" name="system.quickslots.{{index}}.durability" value="{{item.durability}}" placeholder="5">
+              </div>
+            </div>
+          {{/if}}
+        {{/each}}
+      </div>
+      <div class="quickslot-column">
+        <div class="quickslot-header">
+          <span>Gear</span>
+          <span>Durability</span>
+        </div>
+        {{#each system.quickslots as |item index|}}
+          {{#if (and (gte index 5) (lt index 9))}}
+            <div class="quickslot-item">
+              <div class="field">
+                <label>Item {{add index 1}}:</label>
+                <input type="text" name="system.quickslots.{{index}}.name" value="{{item.name}}" placeholder="Scroll">
+              </div>
+              <div class="field">
+                <label>Durability:</label>
+                <input type="number" name="system.quickslots.{{index}}.durability" value="{{item.durability}}" placeholder="3">
+              </div>
+            </div>
+          {{/if}}
+        {{/each}}
+        <div class="quiver-header">
+          <span>Quiver</span>
+          <span>Quantity</span>
+        </div>
+        {{#each system.quickslots as |item index|}}
+          {{#if (eq index 9)}}
+            <div class="quickslot-item quiver">
+              <div class="field">
+                <label>Quiver Ammo:</label>
+                <input type="text" name="system.quickslots.{{index}}.ammo" value="{{item.ammo}}" placeholder="Arrows">
+              </div>
+              <div class="field">
+                <label>Quantity:</label>
+                <input type="number" name="system.quickslots.{{index}}.quantity" value="{{item.quantity}}" placeholder="20">
+              </div>
+            </div>
+          {{/if}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+  <div class="accessories">
+    <h3>Accessories</h3>
+    <div class="accessories-list">
+      <div class="accessory-column">
+        <div class="accessory-header">
+          <span>Necklace</span>
+          <span>Special</span>
+        </div>
+        {{#each system.accessories.necklaces as |necklace index|}}
+          <div class="accessory-item">
+            <div class="field">
+              <input type="text" name="system.accessories.necklaces.{{index}}.name" value="{{necklace.name}}" placeholder="Amulet">
+            </div>
+            <div class="field">
+              <input type="text" name="system.accessories.necklaces.{{index}}.special" value="{{necklace.special}}" placeholder="None">
+            </div>
+          </div>
+        {{/each}}
+      </div>
+      <div class="accessory-column">
+        <div class="accessory-header">
+          <span>Ring</span>
+          <span>Special</span>
+        </div>
+        {{#each system.accessories.rings as |ring index|}}
+          <div class="accessory-item">
+            <div class="field">
+              <input type="text" name="system.accessories.rings.{{index}}.name" value="{{ring.name}}" placeholder="Ring">
+            </div>
+            <div class="field">
+              <input type="text" name="system.accessories.rings.{{index}}.special" value="{{ring.special}}" placeholder="None">
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>

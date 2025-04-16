@@ -1,0 +1,301 @@
+{
+  "Actor": {
+    "types": ["character"],
+    "character": {
+      "name": { "type": "String", "default": "" },
+      "system": {
+        "abilities": {
+          "strength": {
+            "value": { "type": "Number", "default": 0 },
+            "damageBonus": { "type": "Number", "default": 0 }
+          },
+          "dexterity": {
+            "value": { "type": "Number", "default": 0 },
+            "naturalArmor": { "type": "Number", "default": 0 }
+          },
+          "constitution": {
+            "value": { "type": "Number", "default": 0 },
+            "movement": { "type": "Number", "default": 0 }
+          },
+          "intelligence": {
+            "value": { "type": "Number", "default": 0 },
+            "mana": { "type": "Number", "default": 0 }
+          },
+          "wisdom": {
+            "value": { "type": "Number", "default": 0 },
+            "partyMorale": { "type": "Number", "default": 0 }
+          },
+          "hitPoints": {
+            "current": { "type": "Number", "default": 0 },
+            "max": { "type": "Number", "default": 0 }
+          },
+          "luck": {
+            "current": { "type": "Number", "default": 0 },
+            "max": { "type": "Number", "default": 0 }
+          },
+          "energy": {
+            "current": { "type": "Number", "default": 0 },
+            "max": { "type": "Number", "default": 0 }
+          },
+          "sanity": {
+            "current": { "type": "Number", "default": 0 },
+            "max": { "type": "Number", "default": 0 }
+          },
+          "condition": { "type": "String", "default": "normal" }
+        },
+        "skills": [
+          {
+            "name": { "type": "String", "default": "" },
+            "ability": { "type": "String", "default": "" },
+            "value": { "type": "Number", "default": 0 },
+            "modifier": { "type": "Number", "default": 0 }
+          }
+        ],
+        "weapons": [
+          {
+            "name": { "type": "String", "default": "" },
+            "slot": { "type": "String", "default": "" },
+            "hands": { "type": "String", "default": "" },
+            "dmg": { "type": "String", "default": "" },
+            "class": { "type": "String", "default": "" },
+            "enc": { "type": "Number", "default": 0 },
+            "durability": { "type": "Number", "default": 0 },
+            "special": { "type": "String", "default": "" }
+          }
+        ],
+        "quickslots": [
+          {
+            "name": { "type": "String", "default": "" },
+            "durability": { "type": "Number", "default": 0 },
+            "ammo": { "type": "String", "default": "" },
+            "quantity": { "type": "Number", "default": 0 }
+          }
+        ],
+        "accessories": {
+          "necklaces": [
+            {
+              "name": { "type": "String", "default": "" },
+              "special": { "type": "String", "default": "" }
+            }
+          ],
+          "rings": [
+            {
+              "name": { "type": "String", "default": "" },
+              "special": { "type": "String", "default": "" }
+            }
+          ]
+        },
+        "spells": {
+          "level1": [
+            {
+              "name": { "type": "String", "default": "" },
+              "castValue": { "type": "Number", "default": 0 },
+              "mana": { "type": "Number", "default": 0 },
+              "upkeep": { "type": "Number", "default": 0 },
+              "special": { "type": "String", "default": "" },
+              "effect": { "type": "String", "default": "" }
+            }
+          ],
+          "level2": [
+            {
+              "name": { "type": "String", "default": "" },
+              "castValue": { "type": "Number", "default": 0 },
+              "mana": { "type": "Number", "default": 0 },
+              "upkeep": { "type": "Number", "default": 0 },
+              "special": { "type": "String", "default": "" },
+              "effect": { "type": "String", "default": "" }
+            }
+          ],
+          "level3": [
+            {
+              "name": { "type": "String", "default": "" },
+              "castValue": { "type": "Number", "default": 0 },
+              "mana": { "type": "Number", "default": 0 },
+              "upkeep": { "type": "Number", "default": 0 },
+              "special": { "type": "String", "default": "" },
+              "effect": { "type": "String", "default": "" }
+            }
+          ],
+          "level4": [
+            {
+              "name": { "type": "String", "default": "" },
+              "castValue": { "type": "Number", "default": 0 },
+              "mana": { "type": "Number", "default": 0 },
+              "upkeep": { "type": "Number", "default": 0 },
+              "special": { "type": "String", "default": "" },
+              "effect": { "type": "String", "default": "" }
+            }
+          ],
+          "level5": [
+            {
+              "name": { "type": "String", "default": "" },
+              "castValue": { "type": "Number", "default": 0 },
+              "mana": { "type": "Number", "default": 0 },
+              "upkeep": { "type": "Number", "default": 0 },
+              "special": { "type": "String", "default": "" },
+              "effect": { "type": "String", "default": "" }
+            }
+          ],
+          "level6": [
+            {
+              "name": { "type": "String", "default": "" },
+              "castValue": { "type": "Number", "default": 0 },
+              "mana": { "type": "Number", "default": 0 },
+              "upkeep": { "type": "Number", "default": 0 },
+              "special": { "type": "String", "default": "" },
+              "effect": { "type": "String", "default": "" }
+            }
+          ]
+        },
+        "prayers": {
+          "level1": [
+            {
+              "name": { "type": "String", "default": "" },
+              "effect": { "type": "String", "default": "" }
+            }
+          ],
+          "level2": [
+            {
+              "name": { "type": "String", "default": "" },
+              "effect": { "type": "String", "default": "" }
+            }
+          ],
+          "level3": [
+            {
+              "name": { "type": "String", "default": "" },
+              "effect": { "type": "String", "default": "" }
+            }
+          ],
+          "level4": [
+            {
+              "name": { "type": "String", "default": "" },
+              "effect": { "type": "String", "default": "" }
+            }
+          ]
+        },
+        "recipes": [
+          {
+            "name": { "type": "String", "default": "" },
+            "component1": { "type": "String", "default": "" },
+            "component2": { "type": "String", "default": "" },
+            "component3": { "type": "String", "default": "" },
+            "component4": { "type": "String", "default": "" }
+          }
+        ],
+        "inventory": [
+          {
+            "name": { "type": "String", "default": "" },
+            "encumbrance": { "type": "Number", "default": 0 },
+            "cost": { "type": "Number", "default": 0 }
+          }
+        ],
+        "encumbrance": {
+          "total": { "type": "Number", "default": 0 },
+          "carried": { "type": "Number", "default": 0 }
+        },
+        "wealth": {
+          "coins": { "type": "Number", "default": 0 }
+        },
+        "talents": [
+          {
+            "name": { "type": "String", "default": "" },
+            "type": { "type": "String", "default": "" },
+            "effect": { "type": "String", "default": "" }
+          }
+        ],
+        "perks": [
+          {
+            "name": { "type": "String", "default": "" },
+            "type": { "type": "String", "default": "" },
+            "effect": { "type": "String", "default": "" }
+          }
+        ],
+        "notes": { "type": "String", "default": "" }
+      }
+    }
+  },
+  "Item": {
+    "types": ["weapon", "armor", "equipment", "ingredient", "potion", "spell", "prayer", "talent", "perk", "profession", "race", "background"],
+    "weapon": {
+      "dmg": { "type": "String", "default": "" },
+      "reload": { "type": "String", "default": "", "enum": ["", "1", "2", "3"] },
+      "mithril": { "type": "Boolean", "default": false },
+      "class": { "type": "String", "default": "1", "enum": ["1", "2", "3", "4", "5", "6"] },
+      "enc": { "type": "Number", "default": 0 },
+      "cost": { "type": "Number", "default": 0 },
+      "special": { "type": "String", "default": "" },
+      "availability": { "type": "String", "default": "1", "enum": ["1", "2", "3", "4", "5", "6"] },
+      "durability": { "type": "Number", "default": 6 },
+      "description": { "type": "String", "default": "" },
+      "effect": { "type": "String", "default": "" }
+    },
+    "armor": {
+      "baseType": { "type": "String", "default": "Padded", "enum": ["Padded", "Leather", "Mail", "Sleeved Mail", "Plate", "None"] },
+      "covers": { "type": "String", "default": "Head", "enum": ["Head", "Torso", "Torso (Back Only)", "Legs", "Arms", "Shield"] },
+      "tier": { "type": "String", "default": "1", "enum": ["1", "2", "3", "4"] },
+      "availability": { "type": "String", "default": "1", "enum": ["1", "2", "3", "4", "5", "6"] },
+      "mithril": { "type": "Boolean", "default": false },
+      "protection": { "type": "Number", "default": 0 },
+      "enc": { "type": "Number", "default": 0 },
+      "durability": { "type": "Number", "default": 0 },
+      "special": { "type": "String", "default": "" },
+      "cost": { "type": "Number", "default": 0 },
+      "description": { "type": "String", "default": "" },
+      "effect": { "type": "String", "default": "" }
+    },
+    "equipment": {
+      "enc": { "type": "Number", "default": 0 },
+      "durability": { "type": "Number", "default": 0 },
+      "special": { "type": "String", "default": "" },
+      "description": { "type": "String", "default": "" },
+      "effect": { "type": "String", "default": "" }
+    },
+    "ingredient": {
+      "enc": { "type": "Number", "default": 0 },
+      "description": { "type": "String", "default": "" },
+      "effect": { "type": "String", "default": "" }
+    },
+    "potion": {
+      "enc": { "type": "Number", "default": 0 },
+      "durability": { "type": "Number", "default": 0 },
+      "effect": { "type": "String", "default": "" },
+      "description": { "type": "String", "default": "" }
+    },
+    "spell": {
+      "castValue": { "type": "Number", "default": 0 },
+      "mana": { "type": "Number", "default": 0 },
+      "upkeep": { "type": "Number", "default": 0 },
+      "special": { "type": "String", "default": "" },
+      "effect": { "type": "String", "default": "" },
+      "description": { "type": "String", "default": "" }
+    },
+    "prayer": {
+      "effect": { "type": "String", "default": "" },
+      "description": { "type": "String", "default": "" }
+    },
+    "talent": {
+      "type": { "type": "String", "default": "" },
+      "effect": { "type": "String", "default": "" },
+      "description": { "type": "String", "default": "" }
+    },
+    "perk": {
+      "type": { "type": "String", "default": "" },
+      "effect": { "type": "String", "default": "" },
+      "description": { "type": "String", "default": "" }
+    },
+    "profession": {
+      "description": { "type": "String", "default": "" },
+      "effect": { "type": "String", "default": "" }
+    },
+    "race": {
+      "description": { "type": "String", "default": "" },
+      "effect": { "type": "String", "default": "" }
+    },
+    "background": {
+      "trait": { "type": "String", "default": "" },
+      "personalQuest": { "type": "String", "default": "" },
+      "description": { "type": "String", "default": "" },
+      "effect": { "type": "String", "default": "" }
+    }
+  }
+}

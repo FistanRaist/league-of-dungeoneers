@@ -1,0 +1,24 @@
+<form class="lod-item-sheet" autocomplete="off">
+  <header class="sheet-header">
+    <img class="portrait" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+    <div class="header-fields">
+      <h1 class="item-name"><input name="name" type="text" value="{{item.name}}" placeholder="Item Name" /></h1>
+    </div>
+  </header>
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="details">Details</a>
+    <a class="item" data-tab="description">Description</a>
+    <a class="item" data-tab="effect">Effect</a>
+  </nav>
+  <section class="sheet-body">
+    <div class="tab" data-tab="details" data-group="primary">
+      {{> (lookup partials item.type)}}
+    </div>
+    <div class="tab" data-tab="description" data-group="primary">
+      {{editor system.description target="system.description" button=true owner=owner editable=editable}}
+    </div>
+    <div class="tab" data-tab="effect" data-group="primary">
+      {{editor system.effect target="system.effect" button=true owner=owner editable=editable}}
+    </div>
+  </section>
+</form>

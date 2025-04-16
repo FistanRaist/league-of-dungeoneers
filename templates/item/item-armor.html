@@ -1,0 +1,65 @@
+<div class="armor-details">
+  <!-- Row 1: Base Type, Covers, Mithril? -->
+  <div class="item-row">
+    <div class="field">
+      <label>Base Type</label>
+      <select name="system.baseType">
+        {{selectOptions baseTypeOptions selected=system.baseType localize=true}}
+      </select>
+    </div>
+    <div class="field">
+      <label>Covers</label>
+      <select name="system.covers">
+        {{selectOptions coversOptions selected=system.covers localize=true}}
+      </select>
+    </div>
+    <div class="field">
+      <label>Mithril?</label>
+      <input name="system.mithril" type="checkbox" {{checked system.mithril}} />
+    </div>
+  </div>
+
+  <!-- Row 2: Defense, Enc, Cost (single row) -->
+  <div class="item-row">
+    <div class="field">
+      <label>Defense</label>
+      <input name="system.protection" type="number" value="{{system.protection}}" placeholder="0" />
+    </div>
+    <div class="field">
+      <label>Enc</label>
+      <input name="system.enc" type="number" value="{{system.enc}}" placeholder="0" />
+    </div>
+    <div class="field">
+      <label>Cost</label>
+      <input name="system.cost" type="number" value="{{system.cost}}" placeholder="0" />
+    </div>
+  </div>
+
+  <!-- Row 3: Special -->
+  <div class="item-row">
+    <div class="field full-width">
+      <label>Special</label>
+      <input name="system.special" type="text" value="{{system.special}}" placeholder="Special" />
+    </div>
+  </div>
+
+  <!-- Row 4: Tier, Availability, Durability -->
+  <div class="item-row">
+    <div class="field">
+      <label>Tier</label>
+      <select name="system.tier">
+        {{selectOptions tierOptions selected=system.tier localize=true}}
+      </select>
+    </div>
+    <div class="field">
+      <label>Availability</label>
+      <select name="system.availability">
+        {{selectOptions availabilityOptions selected=system.availability localize=true}}
+      </select>
+    </div>
+    <div class="field">
+      <label>Durability</label>
+      <input name="system.durability" type="number" value="{{system.durability}}" placeholder="0" />
+    </div>
+  </div>
+</div>

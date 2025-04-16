@@ -1,0 +1,167 @@
+/* global.css */
+
+/* Define global variables */
+:root {
+  --field-background: rgba(223, 215, 201, 0.6);
+  --field-border-color: #77471a; /* Darkest color provided */
+}
+
+/* Load custom fonts */
+@font-face {
+  font-family: "Fanta";
+  src: url("../assets/font/fanta___.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Vanlose BookType Normal";
+  src: url("../assets/font/Vanlose-BookType-Normal.ttf.eot") format("embedded-opentype");
+}
+
+/* Target the outer window container (both actor and item) */
+.window-app.league-of-dungeoneers {
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+/* Keep window-header default (black) */
+.window-app.league-of-dungeoneers .window-header {
+  background: #191813 !important;
+  color: #f0f0e0 !important;
+  border-bottom: 1px solid #000 !important;
+}
+
+/* Form styling (shared) */
+.lod-actor-sheet,
+.lod-item-sheet {
+  font-family: "Vanlose BookType Normal", Arial, sans-serif !important;
+}
+
+/* Header styling (shared) */
+.window-app.league-of-dungeoneers .sheet-header {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: flex-start !important;
+  margin-bottom: 10px !important;
+  position: relative !important;
+  justify-content: space-between !important;
+}
+
+/* Tabs navigation (shared for actor and item) */
+.window-app.league-of-dungeoneers .sheet-tabs {
+  margin: 10px 0 !important;
+  position: relative !important;
+  border: none !important;
+  padding: 20px 0 10px 0 !important;
+  background: none !important;
+}
+
+.window-app.league-of-dungeoneers .sheet-tabs::before {
+  content: "" !important;
+  display: block !important;
+  width: 100% !important;
+  height: 20px !important;
+  background: url("../assets/spear-divider.svg") no-repeat center center !important;
+  background-size: contain !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+}
+
+.window-app.league-of-dungeoneers .sheet-tabs::after {
+  content: "" !important;
+  display: block !important;
+  width: 100% !important;
+  height: 15px !important;
+  background: url("../assets/spear-divider.svg") no-repeat center center !important;
+  background-size: contain !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+}
+
+/* Remove default tab borders */
+.window-app.league-of-dungeoneers .tabs {
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+/* Tab buttons */
+.window-app.league-of-dungeoneers .sheet-tabs .item {
+  font-family: "Fanta", serif !important;
+  font-size: 1.2em !important;
+  padding: 5px 10px !important;
+  background: transparent !important;
+  border: none !important;
+  color: #888 !important;
+}
+
+/* Active tab */
+.window-app.league-of-dungeoneers .sheet-tabs .item.active {
+  background: transparent !important;
+  color: #1c2526 !important;
+  font-weight: bold !important;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Tab content (shared) */
+.window-app.league-of-dungeoneers .sheet-body {
+  position: relative !important;
+  margin-top: 0 !important;
+}
+
+.window-app.league-of-dungeoneers .tab {
+  display: none !important;
+}
+
+.window-app.league-of-dungeoneers .tab.active {
+  display: block !important;
+}
+
+/* General field styling (shared) */
+.field {
+  display: flex !important;
+  align-items: center !important;
+  margin-bottom: 5px !important;
+}
+
+.field label {
+  width: 120px !important;
+  font-family: "Fanta", serif !important;
+  font-size: 16.8px !important;
+  margin-right: 10px !important;
+}
+
+.field input,
+.field select,
+.field textarea {
+  flex: 1 !important;
+  font-family: "Vanlose BookType Normal", Arial, sans-serif !important;
+  font-size: 1em !important;
+  border: 1px solid var(--field-border-color) !important;
+  background: var(--field-background) !important;
+  padding: 5px !important;
+}
+
+/* Section headings (shared) */
+h3, h4 {
+  font-family: "Fanta", serif !important;
+  font-size: 1.3em !important;
+  margin: 10px 0 5px !important;
+}
+
+/* Specific sections (actor) */
+.armor-section,
+.weapon,
+.quickslot,
+.quiver,
+.encumbrance,
+.items,
+.wealth,
+.talents-list,
+.perks-list,
+.spell-level,
+.accessories {
+  margin-bottom: 15px !important;
+}

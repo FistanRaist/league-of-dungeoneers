@@ -1,0 +1,88 @@
+<form class="lod-actor-sheet">
+  <header class="sheet-header">
+    <div class="portrait">
+      <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" width="100" height="100">
+    </div>
+    <div class="center-container">
+      <div class="row-1">
+        <div class="name-field">
+          <label>Name:</label>
+          <input type="text" name="name" value="{{actor.name}}" placeholder="Character Name">
+        </div>
+        <div class="profession-field">
+          <label>Profession:</label>
+          <input type="text" name="system.profession" value="{{system.profession}}" placeholder="Profession">
+        </div>
+      </div>
+      <div class="row-2">
+        <div class="field">
+          <label>Species:</label>
+          <input type="text" name="system.species" value="{{system.species}}" placeholder="Species">
+        </div>
+        <div class="field">
+          <label>Level:</label>
+          <input type="number" name="system.level" value="{{system.level}}" placeholder="1">
+        </div>
+        <div class="field">
+          <label>XP:</label>
+          <input type="number" name="system.xp" value="{{system.xp}}" placeholder="0">
+        </div>
+      </div>
+      <div class="row-3">
+        <div class="field">
+          <label>Background:</label>
+          <input type="text" name="system.background" value="{{system.background}}" placeholder="Background">
+        </div>
+        <div class="field">
+          <label>Status:</label>
+          <input type="text" name="system.status" value="{{system.status}}" placeholder="Status">
+        </div>
+      </div>
+    </div>
+    <div class="logo">
+      <img src="systems/league-of-dungeoneers/assets/actor-icon.png" alt="League of Dungeoneers Logo" width="100" height="100">
+    </div>
+  </header>
+
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="main">Main</a>
+    <a class="item" data-tab="combat">Combat</a>
+    <a class="item" data-tab="inventory">Inventory</a>
+    <a class="item" data-tab="talents">Talents</a>
+    <a class="item" data-tab="spells">Spells</a>
+    <a class="item" data-tab="prayers">Prayers</a>
+    <a class="item" data-tab="recipes">Recipes</a>
+    <a class="item" data-tab="notes">Notes</a>
+    <a class="item" data-tab="effects">Effects</a>
+  </nav>
+
+  <section class="sheet-body">
+    <div class="tab actor-main" data-group="primary" data-tab="main">
+      {{> "actor-main"}}
+    </div>
+    <div class="tab actor-combat" data-group="primary" data-tab="combat">
+      {{> "actor-combat"}}
+    </div>
+    <div class="tab actor-inventory" data-group="primary" data-tab="inventory">
+      {{> "actor-inventory"}}
+    </div>
+    <div class="tab actor-talents" data-group="primary" data-tab="talents">
+      {{> "actor-talents"}}
+    </div>
+    <div class="tab actor-spells" data-group="primary" data-tab="spells">
+      {{> "actor-spells"}}
+    </div>
+    <div class="tab actor-prayers" data-group="primary" data-tab="prayers">
+      {{> "actor-prayers"}}
+    </div>
+    <div class="tab actor-recipes" data-group="primary" data-tab="recipes">
+      {{> "actor-recipes"}}
+    </div>
+    <div class="tab actor-notes" data-group="primary" data-tab="notes">
+      {{> "actor-notes"}}
+    </div>
+    <div class="tab actor-effects" data-group="primary" data-tab="effects">
+      {{> "actor-effects"}}
+    </div>
+  </section>
+</form>

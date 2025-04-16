@@ -1,0 +1,59 @@
+<div class="weapon-details">
+  <!-- Row 1: Damage, Reload, Mithril? -->
+  <div class="item-row">
+    <div class="field">
+      <label>Damage</label>
+      <input name="system.dmg" type="text" value="{{system.dmg}}" placeholder="Damage" />
+    </div>
+    <div class="field">
+      <label>Reload</label>
+      <select name="system.reload">
+        {{selectOptions reloadOptions selected=system.reload localize=true}}
+      </select>
+    </div>
+    <div class="field">
+      <label>Mithril?</label>
+      <input name="system.mithril" type="checkbox" {{checked system.mithril}} />
+    </div>
+  </div>
+
+  <!-- Row 2: Class, Enc, Cost -->
+  <div class="item-row">
+    <div class="field">
+      <label>Class</label>
+      <select name="system.class">
+        {{selectOptions classOptions selected=system.class localize=true}}
+      </select>
+    </div>
+    <div class="field">
+      <label>Enc</label>
+      <input name="system.enc" type="number" value="{{system.enc}}" placeholder="0" />
+    </div>
+    <div class="field">
+      <label>Cost</label>
+      <input name="system.cost" type="number" value="{{system.cost}}" placeholder="0" />
+    </div>
+  </div>
+
+  <!-- Row 3: Special -->
+  <div class="item-row">
+    <div class="field full-width">
+      <label>Special</label>
+      <input name="system.special" type="text" value="{{system.special}}" placeholder="Special" />
+    </div>
+  </div>
+
+  <!-- Row 4: Availability, Durability -->
+  <div class="item-row">
+    <div class="field">
+      <label>Availability</label>
+      <select name="system.availability">
+        {{selectOptions availabilityOptions selected=system.availability localize=true}}
+      </select>
+    </div>
+    <div class="field">
+      <label>Durability</label>
+      <input name="system.durability" type="number" value="{{system.durability}}" placeholder="6" />
+    </div>
+  </div>
+</div>

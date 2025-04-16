@@ -1,0 +1,29 @@
+{
+  "id": "league-of-dungeoneers",
+  "title": "League of Dungeoneers",
+  "description": "A custom system for Foundry VTT",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "FistanRaist"
+    }
+  ],
+  "compatibility": {
+    "minimum": "12",
+    "verified": "12.327"
+  },
+  "esmodules": [
+    "league-of-dungeoneers.mjs"
+  ],
+  "styles": [
+    "styles/league-of-dungeoneers.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "template": "template.json"
+}

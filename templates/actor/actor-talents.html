@@ -1,0 +1,44 @@
+<div class="actor-talents">
+  <div class="talents-list">
+    <h3>Talents</h3>
+    <div class="talent-header">
+      <span>Name</span>
+      <span>Type</span>
+      <span>Effect</span>
+    </div>
+    {{#each system.talents as |talent index|}}
+      <div class="talent-item">
+        <div class="field">
+          <input type="text" name="system.talents.{{index}}.name" value="{{talent.name}}" placeholder="Talent Name">
+        </div>
+        <div class="field">
+          <input type="text" name="system.talents.{{index}}.type" value="{{talent.type}}" placeholder="Type">
+        </div>
+        <div class="field">
+          <input type="text" name="system.talents.{{index}}.effect" value="{{talent.effect}}" placeholder="Description">
+        </div>
+      </div>
+    {{/each}}
+  </div>
+  <div class="perks-list">
+    <h3>Perks</h3>
+    <div class="talent-header">
+      <span>Name</span>
+      <span>Type</span>
+      <span>Effect</span>
+    </div>
+    {{#each system.perks as |perk index|}}
+      <div class="talent-item">
+        <div class="field">
+          <input type="text" name="system.perks.{{index}}.name" value="{{perk.name}}" placeholder="Perk Name">
+        </div>
+        <div class="field">
+          <input type="text" name="system.perks.{{index}}.type" value="{{perk.type}}" placeholder="Type">
+        </div>
+        <div class="field">
+          <input type="text" name="system.perks.{{index}}.effect" value="{{perk.effect}}" placeholder="Description">
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="actor-recipes">
+  <div class="recipe-list">
+    <div class="recipe-header">
+      <span>Recipe</span>
+      <span>Component</span>
+      <span>Component</span>
+      <span>Component</span>
+      <span>Component</span>
+      <i class="fas fa-plus item-control add-recipe" title="Add Recipe"></i>
+    </div>
+    {{#each system.recipes as |recipe index|}}
+      <div class="recipe-item">
+        <div class="field">
+          <input type="text" name="system.recipes.{{index}}.name" value="{{recipe.name}}" placeholder="Recipe Name">
+        </div>
+        <div class="field">
+          <input type="text" name="system.recipes.{{index}}.component1" value="{{recipe.component1}}" placeholder="Component 1">
+        </div>
+        <div class="field">
+          <input type="text" name="system.recipes.{{index}}.component2" value="{{recipe.component2}}" placeholder="Component 2">
+        </div>
+        <div class="field">
+          <input type="text" name="system.recipes.{{index}}.component3" value="{{recipe.component3}}" placeholder="Component 3">
+        </div>
+        <div class="field">
+          <input type="text" name="system.recipes.{{index}}.component4" value="{{recipe.component4}}" placeholder="Component 4">
+        </div>
+        <i class="fas fa-trash item-control delete-recipe" data-index="{{index}}" title="Delete Recipe"></i>
+      </div>
+    {{/each}}
+  </div>
+</div>

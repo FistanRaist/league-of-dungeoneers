@@ -1,0 +1,46 @@
+<div class="actor-inventory">
+  <div class="inventory-stats">
+    <div class="columns">
+      <div class="column">
+        <div class="field">
+          <label>Encumbrance</label>
+          <input type="number" name="system.encumbrance.total" value="{{system.encumbrance.total}}" placeholder="0">
+        </div>
+      </div>
+      <div class="column">
+        <div class="field">
+          <label>Carried</label>
+          <input type="number" name="system.encumbrance.carried" value="{{system.encumbrance.carried}}" placeholder="0">
+        </div>
+      </div>
+      <div class="column">
+        <div class="field">
+          <label>Coins</label>
+          <input type="number" name="system.wealth.coins" value="{{system.wealth.coins}}" placeholder="0">
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3>Equipment</h3>
+  <div class="equipment-list">
+    <div class="equipment-header">
+      <span>Gear</span>
+      <span>Encumbrance</span>
+      <span>Cost</span>
+    </div>
+    {{#each system.inventory as |item index|}}
+      <div class="equipment-item">
+        <div class="field">
+          <input type="text" name="system.inventory.{{index}}.name" value="{{item.name}}" placeholder="Item Name">
+        </div>
+        <div class="field">
+          <input type="number" name="system.inventory.{{index}}.encumbrance" value="{{item.encumbrance}}" placeholder="1">
+        </div>
+        <div class="field">
+          <input type="number" name="system.inventory.{{index}}.cost" value="{{item.cost}}" placeholder="10">
+        </div>
+      </div>
+    {{/each}}
+  </div>
+  <h3>Companion</h3>
+</div>

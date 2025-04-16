@@ -1,0 +1,202 @@
+<div class="actor-spells">
+  <div class="spell-list">
+    <!-- Level 1 -->
+    <div class="spell-level">
+      <div class="spell-header">
+        <span>Level 1</span>
+        <span>Cast Value</span>
+        <span>Mana</span>
+        <span>Upkeep</span>
+        <span>Special</span>
+        <span>Effect</span>
+      </div>
+      {{#each system.spells.level1 as |spell index|}}
+        <div class="spell-item">
+          <div class="field">
+            <input type="text" name="system.spells.level1.{{index}}.name" value="{{spell.name}}" placeholder="Spell Name">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level1.{{index}}.castValue" value="{{spell.castValue}}" placeholder="10">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level1.{{index}}.mana" value="{{spell.mana}}" placeholder="5">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level1.{{index}}.upkeep" value="{{spell.upkeep}}" placeholder="0">
+          </div>
+          <div class="field">
+            <input type="text" name="system.spells.level1.{{index}}.special" value="{{spell.special}}" placeholder="None">
+          </div>
+          <div class="field">
+            <input type="text" name="system.spells.level1.{{index}}.effect" value="{{spell.effect}}" placeholder="Description">
+          </div>
+        </div>
+      {{/each}}
+    </div>
+    <!-- Level 2 -->
+    <div class="spell-level">
+      <div class="spell-header">
+        <span>Level 2</span>
+        <span>Cast Value</span>
+        <span>Mana</span>
+        <span>Upkeep</span>
+        <span>Special</span>
+        <span>Effect</span>
+      </div>
+      {{#each system.spells.level2 as |spell index|}}
+        <div class="spell-item">
+          <div class="field">
+            <input type="text" name="system.spells.level2.{{index}}.name" value="{{spell.name}}" placeholder="Spell Name">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level2.{{index}}.castValue" value="{{spell.castValue}}" placeholder="12">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level2.{{index}}.mana" value="{{spell.mana}}" placeholder="7">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level2.{{index}}.upkeep" value="{{spell.upkeep}}" placeholder="1">
+          </div>
+          <div class="field">
+            <input type="text" name="system.spells.level2.{{index}}.special" value="{{spell.special}}" placeholder="None">
+          </div>
+          <div class="field">
+            <input type="text" name="system.spells.level2.{{index}}.effect" value="{{spell.effect}}" placeholder="Description">
+          </div>
+        </div>
+      {{/each}}
+    </div>
+    <!-- Level 3 -->
+    <div class="spell-level">
+      <div class="spell-header">
+        <span>Level 3</span>
+        <span>Cast Value</span>
+        <span>Mana</span>
+        <span>Upkeep</span>
+        <span>Special</span>
+        <span>Effect</span>
+      </div>
+      {{#each system.spells.level3 as |spell index|}}
+        <div class="spell-item">
+          <div class="field">
+            <input type="text" name="system.spells.level3.{{index}}.name" value="{{spell.name}}" placeholder="Spell Name">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level3.{{index}}.castValue" value="{{spell.castValue}}" placeholder="14">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level3.{{index}}.mana" value="{{spell.mana}}" placeholder="9">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level3.{{index}}.upkeep" value="{{spell.upkeep}}" placeholder="2">
+          </div>
+          <div class="field">
+            <input type="text" name="system.spells.level3.{{index}}.special" value="{{spell.special}}" placeholder="None">
+          </div>
+          <div class="field">
+            <input type="text" name="system.spells.level3.{{index}}.effect" value="{{spell.effect}}" placeholder="Description">
+          </div>
+        </div>
+      {{/each}}
+    </div>
+    <!-- Level 4 -->
+    <div class="spell-level">
+      <div class="spell-header">
+        <span>Level 4</span>
+        <span>Cast Value</span>
+        <span>Mana</span>
+        <span>Upkeep</span>
+        <span>Special</span>
+        <span>Effect</span>
+      </div>
+      {{#each system.spells.level4 as |spell index|}}
+        <div class="spell-item">
+          <div class="field">
+            <input type="text" name="system.spells.level4.{{index}}.name" value="{{spell.name}}" placeholder="Spell Name">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level4.{{index}}.castValue" value="{{spell.castValue}}" placeholder="16">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level4.{{index}}.mana" value="{{spell.mana}}" placeholder="11">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level4.{{index}}.upkeep" value="{{spell.upkeep}}" placeholder="3">
+          </div>
+          <div class="field">
+            <input type="text" name="system.spells.level4.{{index}}.special" value="{{spell.special}}" placeholder="None">
+          </div>
+          <div class="field">
+            <input type="text" name="system.spells.level4.{{index}}.effect" value="{{spell.effect}}" placeholder="Description">
+          </div>
+        </div>
+      {{/each}}
+    </div>
+    <!-- Level 5 -->
+    <div class="spell-level">
+      <div class="spell-header">
+        <span>Level 5</span>
+        <span>Cast Value</span>
+        <span>Mana</span>
+        <span>Upkeep</span>
+        <span>Special</span>
+        <span>Effect</span>
+      </div>
+      {{#each system.spells.level5 as |spell index|}}
+        <div class="spell-item">
+          <div class="field">
+            <input type="text" name="system.spells.level5.{{index}}.name" value="{{spell.name}}" placeholder="Spell Name">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level5.{{index}}.castValue" value="{{spell.castValue}}" placeholder="18">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level5.{{index}}.mana" value="{{spell.mana}}" placeholder="13">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level5.{{index}}.upkeep" value="{{spell.upkeep}}" placeholder="4">
+          </div>
+          <div class="field">
+            <input type="text" name="system.spells.level5.{{index}}.special" value="{{spell.special}}" placeholder="None">
+          </div>
+          <div class="field">
+            <input type="text" name="system.spells.level5.{{index}}.effect" value="{{spell.effect}}" placeholder="Description">
+          </div>
+        </div>
+      {{/each}}
+    </div>
+    <!-- Level 6 -->
+    <div class="spell-level">
+      <div class="spell-header">
+        <span>Level 6</span>
+        <span>Cast Value</span>
+        <span>Mana</span>
+        <span>Upkeep</span>
+        <span>Special</span>
+        <span>Effect</span>
+      </div>
+      {{#each system.spells.level6 as |spell index|}}
+        <div class="spell-item">
+          <div class="field">
+            <input type="text" name="system.spells.level6.{{index}}.name" value="{{spell.name}}" placeholder="Spell Name">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level6.{{index}}.castValue" value="{{spell.castValue}}" placeholder="20">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level6.{{index}}.mana" value="{{spell.mana}}" placeholder="15">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level6.{{index}}.upkeep" value="{{spell.upkeep}}" placeholder="5">
+          </div>
+          <div class="field">
+            <input type="text" name="system.spells.level6.{{index}}.special" value="{{spell.special}}" placeholder="None">
+          </div>
+          <div class="field">
+            <input type="text" name="system.spells.level6.{{index}}.effect" value="{{spell.effect}}" placeholder="Description">
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>

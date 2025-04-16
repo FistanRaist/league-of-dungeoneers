@@ -1,0 +1,25 @@
+<div class="ingredient-details">
+  <!-- Row 1: Quantity | Enc | Cost | Monster Part? | Exquisite? -->
+  <div class="item-row">
+    <div class="field">
+      <label>Quantity</label>
+      <input name="system.quantity" type="number" value="{{system.quantity}}" placeholder="0" />
+    </div>
+    <div class="field">
+      <label>Enc</label>
+      <input name="system.enc" type="number" value="{{system.enc}}" placeholder="0" />
+    </div>
+    <div class="field">
+      <label>Cost</label>
+      <input name="system.cost" type="number" value="{{system.cost}}" placeholder="0" />
+    </div>
+    <div class="field">
+      <label>Monster Part?</label>
+      <input name="system.monsterPart" type="checkbox" {{checked system.monsterPart}} />
+    </div>
+    <div class="field">
+      <label>Exquisite?</label>
+      <input name="system.exquisite" type="checkbox" {{checked system.exquisite}} />
+    </div>
+  </div>
+</div>

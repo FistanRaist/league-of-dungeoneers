@@ -1,0 +1,300 @@
+<div class="actor-main">
+  <div class="abilities">
+    <!-- Ability Columns (Strength, Constitution, Dexterity, Wisdom, Resolve) -->
+    <div class="columns">
+      <!-- Column 1: Strength, Damage Bonus -->
+      <div class="column">
+        <div class="row-1">
+          <div class="field">
+            <label>Strength:</label>
+          </div>
+        </div>
+        <div class="row-2">
+          <div class="field">
+            <input type="number" name="system.abilities.strength.value" value="{{system.abilities.strength.value}}" placeholder="0">
+          </div>
+        </div>
+        <div class="row-3">
+          <div class="field">
+            <label>Damage Bonus:</label>
+          </div>
+        </div>
+        <div class="row-4">
+          <div class="field">
+            <input type="number" name="system.abilities.strength.damageBonus" value="{{system.combat.damageBonus}}" placeholder="0">
+          </div>
+        </div>
+      </div>
+      <!-- Column 2: Constitution, Natural Armor -->
+      <div class="column">
+        <div class="row-1">
+          <div class="field">
+            <label>Constitution:</label>
+          </div>
+        </div>
+        <div class="row-2">
+          <div class="field">
+            <input type="number" name="system.abilities.constitution.value" value="{{system.abilities.constitution.value}}" placeholder="0">
+          </div>
+        </div>
+        <div class="row-3">
+          <div class="field">
+            <label>Natural Armor:</label>
+          </div>
+        </div>
+        <div class="row-4">
+          <div class="field">
+            <input type="number" name="system.combat.naturalArmor" value="{{system.combat.naturalArmor}}" placeholder="0">
+          </div>
+        </div>
+      </div>
+      <!-- Column 3: Dexterity, Movement -->
+      <div class="column">
+        <div class="row-1">
+          <div class="field">
+            <label>Dexterity:</label>
+          </div>
+        </div>
+        <div class="row-2">
+          <div class="field">
+            <input type="number" name="system.abilities.dexterity.value" value="{{system.abilities.dexterity.value}}" placeholder="0">
+          </div>
+        </div>
+        <div class="row-3">
+          <div class="field">
+            <label>Movement:</label>
+          </div>
+        </div>
+        <div class="row-4">
+          <div class="field">
+            <input type="number" name="system.combat.movement" value="{{system.combat.movement}}" placeholder="0">
+          </div>
+        </div>
+      </div>
+      <!-- Column 4: Wisdom, Mana -->
+      <div class="column">
+        <div class="row-1">
+          <div class="field">
+            <label>Wisdom:</label>
+          </div>
+        </div>
+        <div class="row-2">
+          <div class="field">
+            <input type="number" name="system.abilities.wisdom.value" value="{{system.abilities.wisdom.value}}" placeholder="0">
+          </div>
+        </div>
+        <div class="row-3">
+          <div class="field">
+            <label>Mana:</label>
+          </div>
+        </div>
+        <div class="row-4">
+          <div class="field">
+            <input type="number" name="system.combat.mana" value="{{system.combat.mana}}" placeholder="0">
+          </div>
+        </div>
+      </div>
+      <!-- Column 5: Resolve, Party Morale -->
+      <div class="column">
+        <div class="row-1">
+          <div class="field">
+            <label>Resolve:</label>
+          </div>
+        </div>
+        <div class="row-2">
+          <div class="field">
+            <input type="number" name="system.abilities.resolve.value" value="{{system.abilities.resolve.value}}" placeholder="0">
+          </div>
+        </div>
+        <div class="row-3">
+          <div class="field">
+            <label>Party Morale:</label>
+          </div>
+        </div>
+        <div class="row-4">
+          <div class="field">
+            <input type="number" name="system.combat.partyMoraleModifier" value="{{system.combat.partyMoraleModifier}}" placeholder="0">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Hit Points, Luck, Energy, Sanity in a Single Row -->
+    <div class="stats-row">
+      <!-- Hit Points -->
+      <div class="stat">
+        <label>Hit Points</label>
+        <div class="stat-fields">
+          <input type="number" name="system.combat.hitPoints.value" value="{{system.combat.hitPoints.value}}" placeholder="0">
+          <span>/</span>
+          <input type="number" name="system.combat.hitPoints.current" value="{{system.combat.hitPoints.current}}" placeholder="0">
+        </div>
+      </div>
+      <!-- Luck -->
+      <div class="stat">
+        <label>Luck</label>
+        <div class="stat-fields">
+          <input type="number" name="system.combat.luck.value" value="{{system.combat.luck.value}}" placeholder="0">
+          <span>/</span>
+          <input type="number" name="system.combat.luck.current" value="{{system.combat.luck.current}}" placeholder="0">
+        </div>
+      </div>
+      <!-- Energy -->
+      <div class="stat">
+        <label>Energy</label>
+        <div class="stat-fields">
+          <input type="number" name="system.combat.energy.value" value="{{system.combat.energy.value}}" placeholder="0">
+          <span>/</span>
+          <input type="number" name="system.combat.energy.current" value="{{system.combat.energy.current}}" placeholder="0">
+        </div>
+      </div>
+      <!-- Sanity -->
+      <div class="stat">
+        <label>Sanity</label>
+        <div class="stat-fields">
+          <input type="number" name="system.combat.sanity.value" value="{{system.combat.sanity.value}}" placeholder="0">
+          <span>/</span>
+          <input type="number" name="system.combat.sanity.current" value="{{system.combat.sanity.current}}" placeholder="0">
+        </div>
+      </div>
+    </div>
+    <!-- Condition Row with Up to Three Dropdowns -->
+    <div class="conditions-row">
+      <label>Conditions:</label>
+      <select name="system.combat.conditions[0]">
+        <option value="" {{#if (eq (lookup system.combat.conditions 0) "")}}selected{{/if}}>-</option>
+        <option value="Healthy" {{#if (eq (lookup system.combat.conditions 0) "Healthy")}}selected{{/if}}>Healthy</option>
+        <option value="Poisoned" {{#if (eq (lookup system.combat.conditions 0) "Poisoned")}}selected{{/if}}>Poisoned</option>
+        <option value="Stunned" {{#if (eq (lookup system.combat.conditions 0) "Stunned")}}selected{{/if}}>Stunned</option>
+        <option value="Bleeding" {{#if (eq (lookup system.combat.conditions 0) "Bleeding")}}selected{{/if}}>Bleeding</option>
+        <option value="Unconscious" {{#if (eq (lookup system.combat.conditions 0) "Unconscious")}}selected{{/if}}>Unconscious</option>
+      </select>
+      <select name="system.combat.conditions[1]">
+        <option value="" {{#if (eq (lookup system.combat.conditions 1) "")}}selected{{/if}}>-</option>
+        <option value="Healthy" {{#if (eq (lookup system.combat.conditions 1) "Healthy")}}selected{{/if}}>Healthy</option>
+        <option value="Poisoned" {{#if (eq (lookup system.combat.conditions 1) "Poisoned")}}selected{{/if}}>Poisoned</option>
+        <option value="Stunned" {{#if (eq (lookup system.combat.conditions 1) "Stunned")}}selected{{/if}}>Stunned</option>
+        <option value="Bleeding" {{#if (eq (lookup system.combat.conditions 1) "Bleeding")}}selected{{/if}}>Bleeding</option>
+        <option value="Unconscious" {{#if (eq (lookup system.combat.conditions 1) "Unconscious")}}selected{{/if}}>Unconscious</option>
+      </select>
+      <select name="system.combat.conditions[2]">
+        <option value="" {{#if (eq (lookup system.combat.conditions 2) "")}}selected{{/if}}>-</option>
+        <option value="Healthy" {{#if (eq (lookup system.combat.conditions 2) "Healthy")}}selected{{/if}}>Healthy</option>
+        <option value="Poisoned" {{#if (eq (lookup system.combat.conditions 2) "Poisoned")}}selected{{/if}}>Poisoned</option>
+        <option value="Stunned" {{#if (eq (lookup system.combat.conditions 2) "Stunned")}}selected{{/if}}>Stunned</option>
+        <option value="Bleeding" {{#if (eq (lookup system.combat.conditions 2) "Bleeding")}}selected{{/if}}>Bleeding</option>
+        <option value="Unconscious" {{#if (eq (lookup system.combat.conditions 2) "Unconscious")}}selected{{/if}}>Unconscious</option>
+      </select>
+    </div>
+  </div>
+  <div class="skills-divider">
+    <h3>Skills</h3>
+  </div>
+  <div class="skills">
+    <div class="skills-columns">
+      <div class="skills-column">
+        <div class="skills-header">
+          <span>Skill</span>
+          <span>Ability</span>
+          <span>Base</span>
+          <span>Modifier</span>
+        </div>
+        <!-- Skill 1: Combat (Dex) -->
+        <div class="skill-item">
+          <i class="fas fa-dice-d20 roll-skill"></i>
+          <span class="skill-name">Combat</span>
+          <span class="skill-ability">Dex</span>
+          <input type="number" name="system.skills.combat.value" value="{{system.skills.combat.value}}" placeholder="0">
+          <input type="number" name="system.skills.combat.modifier" value="{{system.skills.combat.modifier}}" placeholder="0">
+        </div>
+        <!-- Skill 2: Ranged (Dex) -->
+        <div class="skill-item">
+          <i class="fas fa-dice-d20 roll-skill"></i>
+          <span class="skill-name">Ranged</span>
+          <span class="skill-ability">Dex</span>
+          <input type="number" name="system.skills.ranged.value" value="{{system.skills.ranged.value}}" placeholder="0">
+          <input type="number" name="system.skills.ranged.modifier" value="{{system.skills.ranged.modifier}}" placeholder="0">
+        </div>
+        <!-- Skill 3: Dodge (Dex) -->
+        <div class="skill-item">
+          <i class="fas fa-dice-d20 roll-skill"></i>
+          <span class="skill-name">Dodge</span>
+          <span class="skill-ability">Dex</span>
+          <input type="number" name="system.skills.dodge.value" value="{{system.skills.dodge.value}}" placeholder="0">
+          <input type="number" name="system.skills.dodge.modifier" value="{{system.skills.dodge.modifier}}" placeholder="0">
+        </div>
+        <!-- Skill 4: Pick Locks (Dex) -->
+        <div class="skill-item">
+          <i class="fas fa-dice-d20 roll-skill"></i>
+          <span class="skill-name">Pick Locks</span>
+          <span class="skill-ability">Dex</span>
+          <input type="number" name="system.skills.pickLocks.value" value="{{system.skills.pickLocks.value}}" placeholder="0">
+          <input type="number" name="system.skills.pickLocks.modifier" value="{{system.skills.pickLocks.modifier}}" placeholder="0">
+        </div>
+        <!-- Skill 5: Barter (Wis) -->
+        <div class="skill-item">
+          <i class="fas fa-dice-d20 roll-skill"></i>
+          <span class="skill-name">Barter</span>
+          <span class="skill-ability">Wis</span>
+          <input type="number" name="system.skills.barter.value" value="{{system.skills.barter.value}}" placeholder="0">
+          <input type="number" name="system.skills.barter.modifier" value="{{system.skills.barter.modifier}}" placeholder="0">
+        </div>
+        <!-- Skill 6: Heal (Wis) -->
+        <div class="skill-item">
+          <i class="fas fa-dice-d20 roll-skill"></i>
+          <span class="skill-name">Heal</span>
+          <span class="skill-ability">Wis</span>
+          <input type="number" name="system.skills.heal.value" value="{{system.skills.heal.value}}" placeholder="0">
+          <input type="number" name="system.skills.heal.modifier" value="{{system.skills.heal.modifier}}" placeholder="0">
+        </div>
+      </div>
+      <div class="skills-column">
+        <div class="skills-header">
+          <span>Skill</span>
+          <span>Ability</span>
+          <span>Base</span>
+          <span>Modifier</span>
+        </div>
+        <!-- Skill 7: Alchemy (Wis) -->
+        <div class="skill-item">
+          <i class="fas fa-dice-d20 roll-skill"></i>
+          <span class="skill-name">Alchemy</span>
+          <span class="skill-ability">Wis</span>
+          <input type="number" name="system.skills.alchemy.value" value="{{system.skills.alchemy.value}}" placeholder="0">
+          <input type="number" name="system.skills.alchemy.modifier" value="{{system.skills.alchemy.modifier}}" placeholder="0">
+        </div>
+        <!-- Skill 8: Perception (Wis) -->
+        <div class="skill-item">
+          <i class="fas fa-dice-d20 roll-skill"></i>
+          <span class="skill-name">Perception</span>
+          <span class="skill-ability">Wis</span>
+          <input type="number" name="system.skills.perception.value" value="{{system.skills.perception.value}}" placeholder="0">
+          <input type="number" name="system.skills.perception.modifier" value="{{system.skills.perception.modifier}}" placeholder="0">
+        </div>
+        <!-- Skill 9: Arcane (Wis) -->
+        <div class="skill-item">
+          <i class="fas fa-dice-d20 roll-skill"></i>
+          <span class="skill-name">Arcane</span>
+          <span class="skill-ability">Wis</span>
+          <input type="number" name="system.skills.arcane.value" value="{{system.skills.arcane.value}}" placeholder="0">
+          <input type="number" name="system.skills.arcane.modifier" value="{{system.skills.arcane.modifier}}" placeholder="0">
+        </div>
+        <!-- Skill 10: Foraging (Con) -->
+        <div class="skill-item">
+          <i class="fas fa-dice-d20 roll-skill"></i>
+          <span class="skill-name">Foraging</span>
+          <span class="skill-ability">Con</span>
+          <input type="number" name="system.skills.foraging.value" value="{{system.skills.foraging.value}}" placeholder="0">
+          <input type="number" name="system.skills.foraging.modifier" value="{{system.skills.foraging.modifier}}" placeholder="0">
+        </div>
+        <!-- Skill 11: Prayers (Wis) -->
+        <div class="skill-item">
+          <i class="fas fa-dice-d20 roll-skill"></i>
+          <span class="skill-name">Prayers</span>
+          <span class="skill-ability">Wis</span>
+          <input type="number" name="system.skills.prayers.value" value="{{system.skills.prayers.value}}" placeholder="0">
+          <input type="number" name="system.skills.prayers.modifier" value="{{system.skills.prayers.modifier}}" placeholder="0">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
