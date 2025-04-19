@@ -1,0 +1,21 @@
+<div class="party-overlay">
+    <i class="fas fa-lock lock-toggle" title="Toggle Lock"></i>
+    <div class="overlay-section">
+      <label>Party Morale</label>
+      <div class="control-group">
+        <i class="fas fa-dice-d20 morale-d20" title="Roll d20 (Future)"></i>
+        <i class="fas fa-minus morale-minus" title="Decrease Morale"></i>
+        <input type="number" name="partyMorale" value="{{partyMorale}}" readonly>
+        <i class="fas fa-plus morale-plus" title="Increase Morale"></i>
+      </div>
+    </div>
+    <div class="overlay-section">
+      <label>Threat Level</label>
+      <div class="control-group">
+        <i class="fas fa-dice-d20 threat-d20" title="Roll d20 (Future)"></i>
+        <i class="fas fa-minus threat-minus" title="Decrease Threat"></i>
+        <input type="number" name="threatLevel" value="{{threatLevel}}" readonly>
+        <i class="fas fa-plus threat-plus" title="Increase Threat"></i>
+      </div>
+    </div>
+  </div>

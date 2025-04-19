@@ -1,0 +1,55 @@
+<div class="actor-monster-combat">
+    <div class="weapons">
+      <h3>{{localize 'league-of-dungeoneers.stats.weapons'}}</h3>
+      <div class="weapons-header">
+        <span>{{localize 'league-of-dungeoneers.stats.name'}}</span>
+        <span>{{localize 'league-of-dungeoneers.stats.dmg'}}</span>
+      </div>
+      {{#each system.weapons as |weapon index|}}
+      <div class="weapon-item">
+        <div class="field">
+          <label>{{localize 'league-of-dungeoneers.stats.name'}}:</label>
+          <input type="text" name="system.weapons.{{index}}.name" value="{{weapon.name}}" placeholder="Longsword">
+        </div>
+        <div class="field">
+          <label>{{localize 'league-of-dungeoneers.stats.dmg'}}:</label>
+          <input type="text" name="system.weapons.{{index}}.dmg" value="{{weapon.dmg}}" placeholder="1d8">
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    <div class="armor">
+      <h3>{{localize 'league-of-dungeoneers.stats.armor'}}</h3>
+      <div class="armor-list">
+        <div class="armor-header">
+          <span>{{localize 'league-of-dungeoneers.stats.name'}}</span>
+          <span>{{localize 'league-of-dungeoneers.stats.defense'}}</span>
+        </div>
+        {{#each system.armor as |armor index|}}
+        <div class="armor-item">
+          <div class="field">
+            <label>{{localize 'league-of-dungeoneers.stats.name'}}:</label>
+            <input type="text" name="system.armor.{{index}}.name" value="{{armor.name}}" placeholder="Shield">
+          </div>
+          <div class="field">
+            <label>{{localize 'league-of-dungeoneers.stats.defense'}}:</label>
+            <input type="number" name="system.armor.{{index}}.defense" value="{{armor.defense}}" placeholder="2">
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    <div class="special-rules">
+      <h3>{{localize 'league-of-dungeoneers.stats.specialRules'}}</h3>
+      <div class="special-rules-list">
+        {{#each system.specialRules as |rule index|}}
+        <div class="special-rule-item">
+          <div class="field">
+            <label>{{localize 'league-of-dungeoneers.stats.rule'}} {{add index 1}}:</label>
+            <input type="text" name="system.specialRules.{{index}}.name" value="{{rule.name}}" placeholder="Cause Fear">
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>

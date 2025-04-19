@@ -1,6 +1,25 @@
-<div class="item-potion">
-    <label>ENC: <input name="system.enc" type="number" value="{{system.enc}}" /></label>
-    <label>Cost: <input name="system.cost" type="number" value="{{system.cost}}" /></label>
-    <label>Identified?: <input name="system.identified" type="checkbox" {{checked system.identified}} /></label>
-    <label>Effect: <input name="system.effect" type="text" value="{{system.effect}}" /></label>
+<div class="potion-details">
+  <!-- Row 1: ENC | Cost | Identified? -->
+  <div class="item-row row-compact">
+    <div class="field">
+      <label>ENC</label>
+      <input name="system.enc" type="number" value="{{system.enc}}" placeholder="0" />
+    </div>
+    <div class="field">
+      <label>Cost</label>
+      <input name="system.cost" type="number" value="{{system.cost}}" placeholder="0" />
+    </div>
+    <div class="field">
+      <label>Identified?</label>
+      <input name="system.identified" type="checkbox" {{checked system.identified}} />
+    </div>
   </div>
+
+  <!-- Row 2: Effect -->
+  <div class="item-row">
+    <div class="field full-width">
+      <label>Effect</label>
+      <input name="system.effect" type="text" value="{{system.effect}}" placeholder="Effect" />
+    </div>
+  </div>
+</div>

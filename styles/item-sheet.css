@@ -1,281 +1,327 @@
 /* Apply background to content area */
 .window-app.league-of-dungeoneers.item .window-content {
-    background: url("../assets/sheet-background.png") no-repeat center center !important;
-    background-size: cover !important;
-    padding: 30px 30px 30px 40px !important;
-  }
-  
-  /* Portrait (item-specific) */
-  .window-app.league-of-dungeoneers.item .sheet-header .portrait {
-    width: 100px !important;
-    height: 100px !important;
-    min-width: 100px !important; /* Ensure the container doesn't shrink */
-    min-height: 100px !important;
-    margin-right: 10px !important;
-    border: 1px solid #000 !important;
-    border-radius: 5px !important;
-    overflow: hidden !important;
-    display: block !important; /* Ensure no flex shrinkage */
-  }
-  
-  .window-app.league-of-dungeoneers.item .sheet-header .portrait img {
-    width: 100px !important; /* Explicitly set image dimensions */
-    height: 100px !important;
-    object-fit: contain !important;
-    object-position: center !important;
-    display: block !important;
-  }
-  
-  /* Name field (item) */
-  .window-app.league-of-dungeoneers.item .sheet-header .header-fields {
-    flex: 1 !important;
-  }
-  
-  .window-app.league-of-dungeoneers.item .sheet-header .item-name {
-    margin: 0 !important;
-  }
-  
-  .window-app.league-of-dungeoneers.item .sheet-header .item-name input[name="name"] {
-    font-family: "Fanta", serif !important;
-    font-size: 1.8em !important;
-    border: 1px solid var(--field-border-color) !important;
-    background: var(--field-background) !important;
-    text-align: left !important;
-    width: 100% !important; /* Reverted, no max-width */
-    padding: 5px !important;
-  }
-  
-  /* Editor styling in Description and Effect tabs */
-  .window-app.league-of-dungeoneers.item .tab[data-tab="description"] .editor,
-  .window-app.league-of-dungeoneers.item .tab[data-tab="effect"] .editor {
-    position: relative !important;
-    z-index: 10 !important; /* Ensure editor is above other elements */
-    height: 250px !important; /* Fixed height */
-  }
-  
-  .window-app.league-of-dungeoneers.item .tab[data-tab="description"] .editor .editor-content,
-  .window-app.league-of-dungeoneers.item .tab[data-tab="effect"] .editor .editor-content {
-    height: 250px !important; /* Fixed height */
-    background: var(--field-background) !important;
-    border: 1px solid var(--field-border-color) !important;
-    padding: 5px !important;
-    overflow-y: auto !important; /* Allow scrolling if content overflows */
-  }
-  
-  /* Prevent editor from appearing in Details tab */
-  .window-app.league-of-dungeoneers.item .sheet-body .tab[data-tab="details"] .editor {
-    display: none !important;
-  }
-  
-  /* General field styling for item sheets */
-  .window-app.league-of-dungeoneers.item .weapon-details .field,
-  .window-app.league-of-dungeoneers.item .armor-details .field,
-  .window-app.league-of-dungeoneers.item .equipment-details .field,
-  .window-app.league-of-dungeoneers.item .ingredient-details .field,
-  .window-app.league-of-dungeoneers.item .potion-details .field,
-  .window-app.league-of-dungeoneers.item .spell-details .field,
-  .window-app.league-of-dungeoneers.item .prayer-details .field,
-  .window-app.league-of-dungeoneers.item .talent-details .field,
-  .window-app.league-of-dungeoneers.item .perk-details .field,
-  .window-app.league-of-dungeoneers.item .profession-details .field,
-  .window-app.league-of-dungeoneers.item .race-details .field,
-  .window-app.league-of-dungeoneers.item .background-details .field {
-    display: flex !important;
-    align-items: center !important;
-    margin-bottom: 5px !important;
-  }
-  
-  .window-app.league-of-dungeoneers.item .weapon-details .field label,
-  .window-app.league-of-dungeoneers.item .armor-details .field label,
-  .window-app.league-of-dungeoneers.item .equipment-details .field label,
-  .window-app.league-of-dungeoneers.item .ingredient-details .field label,
-  .window-app.league-of-dungeoneers.item .potion-details .field label,
-  .window-app.league-of-dungeoneers.item .spell-details .field label,
-  .window-app.league-of-dungeoneers.item .prayer-details .field label,
-  .window-app.league-of-dungeoneers.item .talent-details .field label,
-  .window-app.league-of-dungeoneers.item .perk-details .field label,
-  .window-app.league-of-dungeoneers.item .profession-details .field label,
-  .window-app.league-of-dungeoneers.item .race-details .field label,
-  .window-app.league-of-dungeoneers.item .background-details .field label {
-    width: 100px !important;
-    font-family: "Fanta", serif !important;
-    font-size: 16.8px !important;
-    margin-right: 10px !important;
-  }
-  
-  .window-app.league-of-dungeoneers.item .weapon-details .field input,
-  .window-app.league-of-dungeoneers.item .equipment-details .field input,
-  .window-app.league-of-dungeoneers.item .ingredient-details .field input,
-  .window-app.league-of-dungeoneers.item .potion-details .field input,
-  .window-app.league-of-dungeoneers.item .spell-details .field input,
-  .window-app.league-of-dungeoneers.item .prayer-details .field input,
-  .window-app.league-of-dungeoneers.item .talent-details .field input,
-  .window-app.league-of-dungeoneers.item .perk-details .field input,
-  .window-app.league-of-dungeoneers.item .profession-details .field input,
-  .window-app.league-of-dungeoneers.item .race-details .field input,
-  .window-app.league-of-dungeoneers.item .background-details .field input,
-  .window-app.league-of-dungeoneers.item .armor-details .field select,
-  .window-app.league-of-dungeoneers.item .equipment-details .field select,
-  .window-app.league-of-dungeoneers.item .ingredient-details .field select,
-  .window-app.league-of-dungeoneers.item .potion-details .field select,
-  .window-app.league-of-dungeoneers.item .spell-details .field select,
-  .window-app.league-of-dungeoneers.item .prayer-details .field select,
-  .window-app.league-of-dungeoneers.item .talent-details .field select,
-  .window-app.league-of-dungeoneers.item .perk-details .field select,
-  .window-app.league-of-dungeoneers.item .profession-details .field select,
-  .window-app.league-of-dungeoneers.item .race-details .field select,
-  .window-app.league-of-dungeoneers.item .background-details .field select {
-    flex: 1 !important;
-    font-family: "Vanlose BookType Normal", Arial, sans-serif !important;
-    font-size: 1em !important;
-    border: 1px solid var(--field-border-color) !important;
-    background: var(--field-background) !important;
-    padding: 5px !important;
-  }
-  
-  /* General row styling for multi-field rows (shared across all sheets) */
-  .window-app.league-of-dungeoneers.item .weapon-details .item-row,
-  .window-app.league-of-dungeoneers.item .armor-details .item-row,
-  .window-app.league-of-dungeoneers.item .background-details .item-row,
-  .window-app.league-of-dungeoneers.item .equipment-details .item-row,
-  .window-app.league-of-dungeoneers.item .ingredient-details .item-row,
-  .window-app.league-of-dungeoneers.item .perk-details .item-row {
-    display: flex !important;
-    justify-content: flex-start !important;
-    margin-bottom: 8px !important;
-  }
-  
-  .window-app.league-of-dungeoneers.item .weapon-details .item-row .field,
-  .window-app.league-of-dungeoneers.item .armor-details .item-row .field,
-  .window-app.league-of-dungeoneers.item .background-details .item-row .field,
-  .window-app.league-of-dungeoneers.item .equipment-details .item-row .field,
-  .window-app.league-of-dungeoneers.item .ingredient-details .item-row .field,
-  .window-app.league-of-dungeoneers.item .perk-details .item-row .field {
-    flex: 0 1 auto !important;
-    margin-right: 5px !important;
-    display: flex !important;
-    align-items: center !important;
-  }
-  
-  .window-app.league-of-dungeoneers.item .weapon-details .item-row .field:last-child,
-  .window-app.league-of-dungeoneers.item .armor-details .item-row .field:last-child,
-  .window-app.league-of-dungeoneers.item .background-details .item-row .field:last-child,
-  .window-app.league-of-dungeoneers.item .equipment-details .item-row .field:last-child,
-  .window-app.league-of-dungeoneers.item .ingredient-details .item-row .field:last-child,
-  .window-app.league-of-dungeoneers.item .perk-details .item-row .field:last-child {
-    margin-right: 0 !important;
-  }
-  
-  .window-app.league-of-dungeoneers.item .weapon-details .item-row .field label,
-  .window-app.league-of-dungeoneers.item .armor-details .item-row .field label,
-  .window-app.league-of-dungeoneers.item .background-details .item-row .field label,
-  .window-app.league-of-dungeoneers.item .equipment-details .item-row .field label,
-  .window-app.league-of-dungeoneers.item .ingredient-details .item-row .field label,
-  .window-app.league-of-dungeoneers.item .perk-details .item-row .field label {
-    width: 70px !important;
-    font-family: "Fanta", serif !important;
-    font-size: 14px !important;
-    margin-right: 3px !important;
-  }
-  
-  .window-app.league-of-dungeoneers.item .weapon-details .item-row .field input[type="text"],
-  .window-app.league-of-dungeoneers.item .weapon-details .item-row .field input[type="number"],
-  .window-app.league-of-dungeoneers.item .weapon-details .item-row .field select,
-  .window-app.league-of-dungeoneers.item .armor-details .item-row .field input[type="text"],
-  .window-app.league-of-dungeoneers.item .armor-details .item-row .field input[type="number"],
-  .window-app.league-of-dungeoneers.item .armor-details .item-row .field select,
-  .window-app.league-of-dungeoneers.item .background-details .item-row .field input[type="text"],
-  .window-app.league-of-dungeoneers.item .background-details .item-row .field input[type="number"],
-  .window-app.league-of-dungeoneers.item .background-details .item-row .field select,
-  .window-app.league-of-dungeoneers.item .equipment-details .item-row .field input[type="text"],
-  .window-app.league-of-dungeoneers.item .equipment-details .item-row .field input[type="number"],
-  .window-app.league-of-dungeoneers.item .equipment-details .item-row .field select,
-  .window-app.league-of-dungeoneers.item .ingredient-details .item-row .field input[type="text"],
-  .window-app.league-of-dungeoneers.item .ingredient-details .item-row .field input[type="number"],
-  .window-app.league-of-dungeoneers.item .ingredient-details .item-row .field select,
-  .window-app.league-of-dungeoneers.item .perk-details .item-row .field input[type="text"],
-  .window-app.league-of-dungeoneers.item .perk-details .item-row .field input[type="number"],
-  .window-app.league-of-dungeoneers.item .perk-details .item-row .field select {
-    flex: 0 1 auto !important;
-    width: 80px !important;
-    font-family: "Vanlose BookType Normal", Arial, sans-serif !important;
-    font-size: 0.9em !important;
-    border: 1px solid var(--field-border-color) !important;
-    background: var(--field-background) !important;
-    padding: 2px !important;
-  }
-  
-  .window-app.league-of-dungeoneers.item .weapon-details .item-row .field input[type="checkbox"],
-  .window-app.league-of-dungeoneers.item .armor-details .item-row .field input[type="checkbox"],
-  .window-app.league-of-dungeoneers.item .background-details .item-row .field input[type="checkbox"],
-  .window-app.league-of-dungeoneers.item .equipment-details .item-row .field input[type="checkbox"],
-  .window-app.league-of-dungeoneers.item .ingredient-details .item-row .field input[type="checkbox"],
-  .window-app.league-of-dungeoneers.item .perk-details .item-row .field input[type="checkbox"] {
-    width: 16px !important;
-    height: 16px !important;
-  }
-  
-  /* Full-width field (e.g., Trait, Personal Quest, Special) */
-  .window-app.league-of-dungeoneers.item .weapon-details .item-row .field.full-width,
-  .window-app.league-of-dungeoneers.item .armor-details .item-row .field.full-width,
-  .window-app.league-of-dungeoneers.item .background-details .item-row .field.full-width,
-  .window-app.league-of-dungeoneers.item .equipment-details .item-row .field.full-width,
-  .window-app.league-of-dungeoneers.item .ingredient-details .item-row .field.full-width,
-  .window-app.league-of-dungeoneers.item .perk-details .item-row .field.full-width {
-    flex: 1 !important;
-    margin-right: 0 !important;
-  }
-  
-  .window-app.league-of-dungeoneers.item .weapon-details .item-row .field.full-width input[type="text"],
-  .window-app.league-of-dungeoneers.item .armor-details .item-row .field.full-width input[type="text"],
-  .window-app.league-of-dungeoneers.item .background-details .item-row .field.full-width input[type="text"],
-  .window-app.league-of-dungeoneers.item .equipment-details .item-row .field.full-width input[type="text"],
-  .window-app.league-of-dungeoneers.item .ingredient-details .item-row .field.full-width input[type="text"],
-  .window-app.league-of-dungeoneers.item .perk-details .item-row .field.full-width input[type="text"] {
-    width: 100% !important;
-  }
-  
-  /* Specific styling for equipment-details rows */
-  .window-app.league-of-dungeoneers.item .equipment-details .item-row:nth-child(1) .field {
-    flex: 1 1 20% !important; /* Equal width for 5 fields in Row 1 */
-    min-width: 120px !important; /* Ensure fields don't shrink too much */
-  }
-  
-  .window-app.league-of-dungeoneers.item .equipment-details .item-row:nth-child(1) .field input[type="number"] {
-    width: 60px !important; /* Smaller width for number inputs */
-  }
-  
-  .window-app.league-of-dungeoneers.item .equipment-details .item-row:nth-child(1) .field input[type="checkbox"] {
-    width: 16px !important;
-    height: 16px !important;
-  }
-  
-  .window-app.league-of-dungeoneers.item .equipment-details .item-row:nth-child(3) .field {
-    flex: 1 1 50% !important; /* Equal width for 2 fields in Row 3 */
-    min-width: 200px !important; /* Ensure fields don't shrink too much */
-  }
-  
-  .window-app.league-of-dungeoneers.item .equipment-details .item-row:nth-child(3) .field input[type="number"],
-  .window-app.league-of-dungeoneers.item .equipment-details .item-row:nth-child(3) .field select {
-    width: 80px !important; /* Consistent width for number inputs and select */
-  }
-  
-  /* Specific styling for perk-details rows */
-  .window-app.league-of-dungeoneers.item .perk-details .item-row .field {
-    flex: 1 1 100% !important; /* Full width for single-field rows */
-  }
-  
-  /* Specific styling for ingredient-details rows */
-  .window-app.league-of-dungeoneers.item .ingredient-details .item-row:nth-child(1) .field {
-    flex: 1 1 20% !important; /* Equal width for 5 fields in Row 1 */
-    min-width: 120px !important; /* Ensure fields don't shrink too much */
-  }
-  
-  .window-app.league-of-dungeoneers.item .ingredient-details .item-row:nth-child(1) .field input[type="number"] {
-    width: 60px !important; /* Smaller width for number inputs */
-  }
-  
-  .window-app.league-of-dungeoneers.item .ingredient-details .item-row:nth-child(1) .field input[type="checkbox"] {
-    width: 16px !important;
-    height: 16px !important;
-  }
+  background: url("../assets/sheet-background.png") no-repeat center center !important;
+  background-size: cover !important;
+  padding: 30px 30px 30px 40px !important;
+}
+
+/* Portrait (item-specific) */
+.window-app.league-of-dungeoneers.item .sheet-header .portrait {
+  width: 100px !important;
+  height: 100px !important;
+  min-width: 100px !important;
+  min-height: 100px !important;
+  margin-right: 10px !important;
+  border: 1px solid #000 !important;
+  border-radius: 5px !important;
+  overflow: hidden !important;
+  display: block !important;
+}
+
+.window-app.league-of-dungeoneers.item .sheet-header .portrait img {
+  width: 100px !important;
+  height: 100px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  display: block !important;
+}
+
+/* Name field (item) */
+.window-app.league-of-dungeoneers.item .sheet-header .header-fields {
+  flex: 1 !important;
+}
+
+.window-app.league-of-dungeoneers.item .sheet-header .item-name {
+  margin: 0 !important;
+}
+
+.window-app.league-of-dungeoneers.item .sheet-header .item-name input[name="name"] {
+  font-family: "Fanta", serif !important;
+  font-size: 1.8em !important;
+  border: 1px solid var(--field-border-color) !important;
+  background: var(--field-background) !important;
+  text-align: left !important;
+  width: 100% !important;
+  padding: 5px !important;
+}
+
+/* General field styling for item sheets */
+.window-app.league-of-dungeoneers.item .field {
+  display: flex !important;
+  align-items: center !important;
+  margin-bottom: 5px !important;
+}
+
+.window-app.league-of-dungeoneers.item .field label {
+  width: 70px !important;
+  font-family: "Fanta", serif !important;
+  font-size: 14px !important;
+  margin-right: 5px !important;
+  color: #4a3728;
+}
+
+.window-app.league-of-dungeoneers.item .field input,
+.window-app.league-of-dungeoneers.item .field select {
+  flex: 0 0 auto !important;
+  font-family: "Vanlose BookType Normal", Arial, sans-serif !important;
+  font-size: 0.9em !important;
+  border: 1px solid var(--field-border-color) !important;
+  background: var(--field-background) !important;
+  padding: 2px !important;
+}
+
+/* Specific input widths */
+.window-app.league-of-dungeoneers.item .field input[type="number"] {
+  width: 60px !important;
+}
+
+.window-app.league-of-dungeoneers.item .field input[type="text"],
+.window-app.league-of-dungeoneers.item .field select {
+  width: 80px !important;
+}
+
+.window-app.league-of-dungeoneers.item .field input[type="checkbox"] {
+  width: 16px !important;
+  height: 16px !important;
+  margin-right: 0 !important;
+}
+
+.window-app.league-of-dungeoneers.item .field label:has(+ input[type="checkbox"]) {
+  margin-right: 1px !important;
+}
+
+/* Full-width fields */
+.window-app.league-of-dungeoneers.item .field.full-width {
+  flex: 1 1 100% !important;
+  margin-right: 0 !important;
+}
+
+.window-app.league-of-dungeoneers.item .field.full-width input[type="text"] {
+  width: 100% !important;
+}
+
+/* Compact row styling for all item types */
+.window-app.league-of-dungeoneers.item .item-row.row-compact {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.window-app.league-of-dungeoneers.item .item-row.row-compact .field {
+  flex: 0 0 auto !important;
+  min-width: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Specific row styling for each item type */
+.window-app.league-of-dungeoneers.item .armor-details .item-row:nth-child(1) .field select,
+.window-app.league-of-dungeoneers.item .armor-details .item-row:nth-child(4) .field select {
+  width: 100px !important;
+}
+
+.window-app.league-of-dungeoneers.item .equipment-details .item-row:nth-child(1) .field input[type="number"],
+.window-app.league-of-dungeoneers.item .equipment-details .item-row:nth-child(4) .field input[type="number"],
+.window-app.league-of-dungeoneers.item .equipment-details .item-row:nth-child(4) .field select {
+  width: 60px !important;
+}
+
+.window-app.league-of-dungeoneers.item .ingredient-details .item-row:nth-child(1) .field input[type="number"] {
+  width: 60px !important;
+}
+
+.window-app.league-of-dungeoneers.item .potion-details .item-row:nth-child(1) .field input[type="number"] {
+  width: 60px !important;
+}
+
+.window-app.league-of-dungeoneers.item .prayer-details .item-row:nth-child(1) .field input[type="number"] {
+  width: 60px !important;
+}
+
+/* Updated styling for profession-details rows */
+.window-app.league-of-dungeoneers.item .profession-details .item-row:nth-child(1) .field,
+.window-app.league-of-dungeoneers.item .profession-details .item-row:nth-child(2) .field,
+.window-app.league-of-dungeoneers.item .profession-details .item-row:nth-child(3) .field,
+.window-app.league-of-dungeoneers.item .profession-details .item-row:nth-child(4) .field {
+  flex: 0 0 auto !important;
+  min-width: 0 !important;
+}
+
+.window-app.league-of-dungeoneers.item .profession-details .item-row:nth-child(1) .field input[type="text"],
+.window-app.league-of-dungeoneers.item .profession-details .item-row:nth-child(2) .field input[type="text"],
+.window-app.league-of-dungeoneers.item .profession-details .item-row:nth-child(3) .field input[type="text"],
+.window-app.league-of-dungeoneers.item .profession-details .item-row:nth-child(4) .field input[type="text"] {
+  width: 100% !important;
+  max-width: 400px !important;
+}
+
+.window-app.league-of-dungeoneers.item .profession-details .item-row:nth-child(6) .field,
+.window-app.league-of-dungeoneers.item .profession-details .item-row:nth-child(7) .field,
+.window-app.league-of-dungeoneers.item .profession-details .item-row:nth-child(8) .field,
+.window-app.league-of-dungeoneers.item .profession-details .item-row:nth-child(9) .field {
+  flex: 0 0 auto !important;
+  min-width: 0 !important;
+}
+
+/* Ensure profession-details fields use the updated spacing */
+.window-app.league-of-dungeoneers.item .profession-details .item-row:nth-child(6) .field label,
+.window-app.league-of-dungeoneers.item .profession-details .item-row:nth-child(7) .field label,
+.window-app.league-of-dungeoneers.item .profession-details .item-row:nth-child(8) .field label,
+.window-app.league-of-dungeoneers.item .profession-details .item-row:nth-child(9) .field label {
+  margin-right: 10px !important;
+}
+
+.window-app.league-of-dungeoneers.item .profession-details .item-row:nth-child(6) .field input[type="number"],
+.window-app.league-of-dungeoneers.item .profession-details .item-row:nth-child(7) .field input[type="number"],
+.window-app.league-of-dungeoneers.item .profession-details .item-row:nth-child(8) .field input[type="number"],
+.window-app.league-of-dungeoneers.item .profession-details .item-row:nth-child(9) .field input[type="number"] {
+  width: 60px !important;
+}
+
+.window-app.league-of-dungeoneers.item .profession-details .item-row:nth-child(9) .field input[type="text"] {
+  width: 100px !important;
+}
+
+.window-app.league-of-dungeoneers.item .race-details .item-row:nth-child(1) .field input[type="text"],
+.window-app.league-of-dungeoneers.item .race-details .item-row:nth-child(2) .field input[type="text"] {
+  width: 100px !important;
+}
+
+.window-app.league-of-dungeoneers.item .race-details .item-row:nth-child(3) .field,
+.window-app.league-of-dungeoneers.item .race-details .item-row:nth-child(4) .field {
+  flex: 1 1 100% !important;
+}
+
+.window-app.league-of-dungeoneers.item .spell-details .item-row:nth-child(1) .field input[type="number"],
+.window-app.league-of-dungeoneers.item .spell-details .item-row:nth-child(1) .field input[type="text"],
+.window-app.league-of-dungeoneers.item .spell-details .item-row:nth-child(2) .field input[type="text"] {
+  width: 80px !important;
+}
+
+.window-app.league-of-dungeoneers.item .talent-details .item-row:nth-child(1) .field input[type="text"] {
+  width: 100px !important;
+}
+
+.window-app.league-of-dungeoneers.item .talent-details .item-row:nth-child(2) .field {
+  flex: 1 1 100% !important;
+}
+
+.window-app.league-of-dungeoneers.item .weapon-details .item-row:nth-child(1) .field input[type="text"],
+.window-app.league-of-dungeoneers.item .weapon-details .item-row:nth-child(1) .field select,
+.window-app.league-of-dungeoneers.item .weapon-details .item-row:nth-child(2) .field select,
+.window-app.league-of-dungeoneers.item .weapon-details .item-row:nth-child(2) .field input[type="number"],
+.window-app.league-of-dungeoneers.item .weapon-details .item-row:nth-child(4) .field select,
+.window-app.league-of-dungeoneers.item .weapon-details .item-row:nth-child(4) .field input[type="number"] {
+  width: 80px !important;
+}
+
+.window-app.league-of-dungeoneers.item .weapon-details .item-row:nth-child(3) .field {
+  flex: 1 1 100% !important;
+}
+
+/* Editor styling for Description tab */
+.window-app.league-of-dungeoneers.item .tab[data-tab="description"] .editor {
+  position: relative !important;
+  z-index: 10 !important;
+  height: auto !important;
+}
+
+.window-app.league-of-dungeoneers.item .tab[data-tab="description"] .editor .editor-content {
+  height: 250px !important;
+  background: none !important;
+  border: none !important;
+  padding: 5px !important;
+  overflow-y: auto !important;
+}
+
+/* Remove editor styling from Effects tab */
+.window-app.league-of-dungeoneers.item .tab[data-tab="effect"] .editor {
+  display: none !important;
+}
+
+/* Ensure textarea in Effects tab matches field-group styling */
+.window-app.league-of-dungeoneers.item .tab[data-tab="effect"] .field-group {
+  margin-bottom: 12px;
+}
+
+.window-app.league-of-dungeoneers.item .tab[data-tab="effect"] .field-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #4a3728;
+}
+
+.window-app.league-of-dungeoneers.item .tab[data-tab="effect"] .field-group textarea {
+  width: 100%;
+  min-height: 80px;
+  resize: vertical;
+  padding: 6px;
+  background: var(--field-background);
+  border: 1px solid var(--field-border-color);
+  color: #4a3728;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+/* Adjusted general field styling to increase space and prevent overlap */
+.window-app.league-of-dungeoneers.item .field label {
+  width: 70px !important; /* Increased to prevent overlap */
+  margin-right: 15px !important; /* Increased by 10px from 5px */
+}
+
+/* Adjusted spacing for checkbox labels */
+.window-app.league-of-dungeoneers.item .field label:has(+ input[type="checkbox"]) {
+  margin-right: 11px !important; /* Increased by 10px from 1px */
+}
+
+/* Style for Skill Modifiers header */
+.window-app.league-of-dungeoneers.item .profession-details .item-row.skill-header {
+  margin-bottom: 10px;
+}
+
+.window-app.league-of-dungeoneers.item .profession-details .item-row.skill-header h3 {
+  margin: 0;
+  font-family: "Fanta", serif;
+  font-size: 16px;
+  color: #4a3728;
+}
+
+/* Compact row styling for special-rule-details */
+.window-app.league-of-dungeoneers.item .special-rule-details .item-row.row-compact {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.window-app.league-of-dungeoneers.item .special-rule-details .item-row.row-compact .field {
+  flex: 0 0 auto !important;
+  min-width: 0 !important;
+  margin-right: 0 !important;
+}
+
+.window-app.league-of-dungeoneers.item .special-rule-details .item-row:nth-child(1) .field {
+  flex: 0 0 auto !important;
+  min-width: 0 !important;
+}
+
+.window-app.league-of-dungeoneers.item .special-rule-details .item-row:nth-child(1) .field label {
+  margin-right: 15px !important;
+}
+
+.window-app.league-of-dungeoneers.item .special-rule-details .item-row:nth-child(1) .field input[type="text"],
+.window-app.league-of-dungeoneers.item .special-rule-details .item-row:nth-child(1) .field select {
+  width: 100px !important;
+}
+
+.window-app.league-of-dungeoneers.item .special-rule-details .item-row:nth-child(1) .field.full-width {
+  flex: 1 1 100% !important;
+}
+
+.window-app.league-of-dungeoneers.item .special-rule-details .item-row:nth-child(1) .field.full-width input[type="text"] {
+  width: 100% !important;
+  max-width: 400px !important;
+}
+
+
+

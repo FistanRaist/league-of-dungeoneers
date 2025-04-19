@@ -13,7 +13,10 @@
     "verified": "12.327"
   },
   "esmodules": [
-    "league-of-dungeoneers.mjs"
+    "league-of-dungeoneers.mjs",
+    "modules/actor-sheet.mjs",
+    "modules/item-sheet.mjs",
+    "modules/overlay.mjs"
   ],
   "styles": [
     "styles/league-of-dungeoneers.css"
@@ -24,6 +27,36 @@
       "name": "English",
       "path": "lang/en.json"
     }
+  ],
+  "templates": [
+    "templates/actor/actor-sheet.html",
+    "templates/actor/actor-main.html",
+    "templates/actor/actor-combat.html",
+    "templates/actor/actor-inventory.html",
+    "templates/actor/actor-talents.html",
+    "templates/actor/actor-spells.html",
+    "templates/actor/actor-prayers.html",
+    "templates/actor/actor-recipes.html",
+    "templates/actor/actor-notes.html",
+    "templates/actor/actor-effects.html",
+    "templates/actor/actor-monster.html",
+    "templates/actor/actor-monster-main.html",
+    "templates/actor/actor-monster-combat.html",
+    "templates/actor/actor-monster-notes.html",
+    "templates/item/item-weapon.html",
+    "templates/item/item-armor.html",
+    "templates/item/item-equipment.html",
+    "templates/item/item-ingredient.html",
+    "templates/item/item-potion.html",
+    "templates/item/item-spell.html",
+    "templates/item/item-prayer.html",
+    "templates/item/item-talent.html",
+    "templates/item/item-perk.html",
+    "templates/item/item-profession.html",
+    "templates/item/item-race.html",
+    "templates/item/item-background.html",
+    "templates/item/item-special-rule.html",
+    "templates/party-overlay.html"
   ],
   "template": "template.json"
 }

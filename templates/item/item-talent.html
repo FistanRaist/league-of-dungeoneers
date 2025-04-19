@@ -1,5 +1,21 @@
-<div class="item-talent">
-    <label>Type: <input name="system.type" type="text" value="{{system.type}}" /></label>
-    <label>Effect: <input name="system.effect" type="text" value="{{system.effect}}" /></label>
-    <label>Comment: <input name="system.comment" type="text" value="{{system.comment}}" /></label>
+<div class="talent-details">
+  <!-- Row 1: Type | Effect -->
+  <div class="item-row row-compact">
+    <div class="field">
+      <label>Type</label>
+      <input name="system.type" type="text" value="{{system.type}}" placeholder="Type" />
+    </div>
+    <div class="field full-width">
+      <label>Effect</label>
+      <input name="system.effect" type="text" value="{{system.effect}}" placeholder="Effect" />
+    </div>
   </div>
+
+  <!-- Row 2: Comment -->
+  <div class="item-row">
+    <div class="field full-width">
+      <label>Comment</label>
+      <input name="system.comment" type="text" value="{{system.comment}}" placeholder="Comment" />
+    </div>
+  </div>
+</div>

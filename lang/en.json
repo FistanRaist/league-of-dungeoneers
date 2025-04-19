@@ -1,28 +1,50 @@
 {
-    "league-of-dungeoneers": {
-      "stats": {
-        "str": "Strength",
-        "dex": "Dexterity",
-        "wis": "Wisdom",
-        "res": "Resolve",
-        "con": "Constitution",
-        "hp": "Hit Points",
-        "energy": "Energy",
-        "sanity": "Sanity",
-        "movement": "Movement",
-        "luck": "Luck",
-        "db": "Damage Bonus",
-        "na": "Natural Armor",
-        "ap": "Action Points"
-      },
-      "skills": {
-        "cs": "Combat Skill",
-        "rs": "Ranged Skill",
-        "perception": "Perception",
-        "dodge": "Dodge",
-        "alchemy": "Alchemy",
-        "arcaneArts": "Arcane Arts",
-        "battlePrayer": "Battle Prayer"
-      }
+  "league-of-dungeoneers": {
+    "stats": {
+      "name": "Name",
+      "main": "Main",
+      "combat": "Combat",
+      "notes": "Notes",
+      "weapons": "Weapons",
+      "armor": "Armor",
+      "specialRules": "Special Rules",
+      "rule": "Rule",
+      "str": "Strength",
+      "dex": "Dexterity",
+      "wis": "Wisdom",
+      "res": "Resolve",
+      "con": "Constitution",
+      "hp": "Hit Points",
+      "energy": "Energy",
+      "sanity": "Sanity",
+      "movement": "Movement",
+      "luck": "Luck",
+      "db": "Damage Bonus",
+      "na": "Natural Armor",
+      "ap": "Action Points",
+      "type": "Type",
+      "number": "Number",
+      "xp": "XP",
+      "loot": "Loot",
+      "dmg": "Damage",
+      "m": "Movement",
+      "toHit": "To Hit",
+      "defense": "Defense"
+    },
+    "skills": {
+      "cs": "Combat Skill",
+      "rs": "Ranged Skill",
+      "perception": "Perception",
+      "dodge": "Dodge",
+      "alchemy": "Alchemy",
+      "arcaneArts": "Arcane Arts",
+      "battlePrayer": "Battle Prayer"
+    },
+    "specialRules": {
+      "type": "Type",
+      "passive": "Passive",
+      "active": "Active",
+      "effect": "Effect"
     }
   }
+}

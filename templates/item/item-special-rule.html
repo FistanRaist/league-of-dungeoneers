@@ -1,0 +1,20 @@
+<div class="special-rule-details">
+  <!-- Row 1: Name | Type | Effect -->
+  <div class="item-row row-compact">
+    <div class="field">
+      <label>{{localize 'league-of-dungeoneers.stats.name'}}</label>
+      <input name="system.name" type="text" value="{{system.name}}" placeholder="{{localize 'league-of-dungeoneers.stats.name'}}" />
+    </div>
+    <div class="field">
+      <label>{{localize 'league-of-dungeoneers.specialRules.type'}}</label>
+      <select name="system.type">
+        <option value="Passive" {{#if (eq system.type "Passive")}}selected{{/if}}>{{localize 'league-of-dungeoneers.specialRules.passive'}}</option>
+        <option value="Active" {{#if (eq system.type "Active")}}selected{{/if}}>{{localize 'league-of-dungeoneers.specialRules.active'}}</option>
+      </select>
+    </div>
+    <div class="field full-width">
+      <label>{{localize 'league-of-dungeoneers.specialRules.effect'}}</label>
+      <input name="system.effect" type="text" value="{{system.effect}}" placeholder="{{localize 'league-of-dungeoneers.specialRules.effect'}}" />
+    </div>
+  </div>
+</div>

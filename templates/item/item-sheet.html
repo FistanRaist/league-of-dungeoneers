@@ -15,10 +15,13 @@
       {{> (lookup partials item.type)}}
     </div>
     <div class="tab" data-tab="description" data-group="primary">
-      {{editor system.description target="system.description" button=true owner=owner editable=editable}}
+      {{editor system.description target="system.description" button=true owner=owner editable=editable engine="none"}}
     </div>
     <div class="tab" data-tab="effect" data-group="primary">
-      {{editor system.effect target="system.effect" button=true owner=owner editable=editable}}
+      <div class="field-group">
+        <label>Effect</label>
+        <textarea name="system.effect">{{system.effect}}</textarea>
+      </div>
     </div>
   </section>
 </form>

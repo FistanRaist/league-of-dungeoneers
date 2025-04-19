@@ -1,19 +1,102 @@
-<div class="item-profession">
-    <label>Talents: <input name="system.talents" type="text" value="{{system.talents}}" /></label>
-    <label>Perks: <input name="system.perks" type="text" value="{{system.perks}}" /></label>
-    <label>Starting Equipment: <input name="system.startingEquipment" type="text" value="{{system.startingEquipment}}" /></label>
-    <label>Limitations: <input name="system.limitations" type="text" value="{{system.limitations}}" /></label>
-    <h3>Skill Modifiers</h3>
-    <label>Combat Skill: <input name="system.skills.combatSkill" type="number" value="{{system.skills.combatSkill}}" /></label>
-    <label>Ranged Skill: <input name="system.skills.rangedSkill" type="number" value="{{system.skills.rangedSkill}}" /></label>
-    <label>Dodge: <input name="system.skills.dodge" type="number" value="{{system.skills.dodge}}" /></label>
-    <label>Pick Locks: <input name="system.skills.pickLocks" type="number" value="{{system.skills.pickLocks}}" /></label>
-    <label>Barter: <input name="system.skills.barter" type="number" value="{{system.skills.barter}}" /></label>
-    <label>Heal: <input name="system.skills.heal" type="number" value="{{system.skills.heal}}" /></label>
-    <label>Alchemy: <input name="system.skills.alchemy" type="number" value="{{system.skills.alchemy}}" /></label>
-    <label>Perception: <input name="system.skills.perception" type="number" value="{{system.skills.perception}}" /></label>
-    <label>Arcane Art: <input name="system.skills.arcaneArt" type="text" value="{{system.skills.arcaneArt}}" /></label>
-    <label>Foraging: <input name="system.skills.foraging" type="number" value="{{system.skills.foraging}}" /></label>
-    <label>Battle Prayers: <input name="system.skills.battlePrayers" type="text" value="{{system.skills.battlePrayers}}" /></label>
-    <label>Hit Points: <input name="system.skills.hitPoints" type="number" value="{{system.skills.hitPoints}}" /></label>
+<div class="profession-details">
+  <!-- Row 1: Talents -->
+  <div class="item-row row-compact">
+    <div class="field full-width">
+      <label>Talents</label>
+      <input name="system.talents" type="text" value="{{system.talents}}" placeholder="Talents" />
+    </div>
   </div>
+
+  <!-- Row 2: Perks -->
+  <div class="item-row row-compact">
+    <div class="field full-width">
+      <label>Perks</label>
+      <input name="system.perks" type="text" value="{{system.perks}}" placeholder="Perks" />
+    </div>
+  </div>
+
+  <!-- Row 3: Starting Equipment -->
+  <div class="item-row row-compact">
+    <div class="field full-width">
+      <label>Starting Equipment</label>
+      <input name="system.startingEquipment" type="text" value="{{system.startingEquipment}}" placeholder="Starting Equipment" />
+    </div>
+  </div>
+
+  <!-- Row 4: Limitations -->
+  <div class="item-row row-compact">
+    <div class="field full-width">
+      <label>Limitations</label>
+      <input name="system.limitations" type="text" value="{{system.limitations}}" placeholder="Limitations" />
+    </div>
+  </div>
+
+  <!-- Row 5: Skill Modifiers Header -->
+  <div class="item-row skill-header">
+    <h3>Skill Modifiers</h3>
+  </div>
+
+  <!-- Row 6: Combat Skill | Ranged Skill | Dodge -->
+  <div class="item-row row-compact">
+    <div class="field">
+      <label>Combat Skill</label>
+      <input name="system.skills.combatSkill" type="number" value="{{system.skills.combatSkill}}" placeholder="0" />
+    </div>
+    <div class="field">
+      <label>Ranged Skill</label>
+      <input name="system.skills.rangedSkill" type="number" value="{{system.skills.rangedSkill}}" placeholder="0" />
+    </div>
+    <div class="field">
+      <label>Dodge</label>
+      <input name="system.skills.dodge" type="number" value="{{system.skills.dodge}}" placeholder="0" />
+    </div>
+  </div>
+
+  <!-- Row 7: Pick Locks | Barter | Heal -->
+  <div class="item-row row-compact">
+    <div class="field">
+      <label>Pick Locks</label>
+      <input name="system.skills.pickLocks" type="number" value="{{system.skills.pickLocks}}" placeholder="0" />
+    </div>
+    <div class="field">
+      <label>Barter</label>
+      <input name="system.skills.barter" type="number" value="{{system.skills.barter}}" placeholder="0" />
+    </div>
+    <div class="field">
+      <label>Heal</label>
+      <input name="system.skills.heal" type="number" value="{{system.skills.heal}}" placeholder="0" />
+    </div>
+  </div>
+
+  <!-- Row 8: Alchemy | Perception | Foraging -->
+  <div class="item-row row-compact">
+    <div class="field">
+      <label>Alchemy</label>
+      <input name="system.skills.alchemy" type="number" value="{{system.skills.alchemy}}" placeholder="0" />
+    </div>
+    <div class="field">
+      <label>Perception</label>
+      <input name="system.skills.perception" type="number" value="{{system.skills.perception}}" placeholder="0" />
+    </div>
+    <div class="field">
+      <label>Foraging</label>
+      <input name="system.skills.foraging" type="number" value="{{system.skills.foraging}}" placeholder="0" />
+    </div>
+  </div>
+
+  <!-- Row 9: Arcane Art | Battle Prayers | Hit Points -->
+  <div class="item-row row-compact">
+    <div class="field">
+      <label>Arcane Art</label>
+      <input name="system.skills.arcaneArt" type="text" value="{{system.skills.arcaneArt}}" placeholder="Arcane Art" />
+    </div>
+    <div class="field">
+      <label>Battle Prayers</label>
+      <input name="system.skills.battlePrayers" type="text" value="{{system.skills.battlePrayers}}" placeholder="Battle Prayers" />
+    </div>
+    <div class="field">
+      <label>Hit Points</label>
+      <input name="system.skills.hitPoints" type="number" value="{{system.skills.hitPoints}}" placeholder="0" />
+    </div>
+  </div>
+</div>

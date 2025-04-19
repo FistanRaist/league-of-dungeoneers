@@ -1,0 +1,158 @@
+<div class="actor-monster-main">
+    <!-- Stats: Two rows of labeled columns -->
+    <div class="abilities">
+      <div class="columns">
+        <!-- Column 1: Hit Points, Current HP -->
+        <div class="column">
+          <div class="row-1">
+            <div class="field">
+              <label>{{localize 'league-of-dungeoneers.stats.hp'}}</label>
+            </div>
+          </div>
+          <div class="row-2">
+            <div class="field">
+              <input type="number" name="system.stats.hp.max" value="{{system.stats.hp.max}}" placeholder="0">
+            </div>
+          </div>
+          <div class="row-3">
+            <div class="field">
+              <label>Current HP</label>
+            </div>
+          </div>
+          <div class="row-4">
+            <div class="field">
+              <input type="number" name="system.stats.hp.current" value="{{system.stats.hp.current}}" placeholder="0">
+            </div>
+          </div>
+        </div>
+        <!-- Column 2: Combat Skill, Damage -->
+        <div class="column">
+          <div class="row-1">
+            <div class="field">
+              <label>{{localize 'league-of-dungeoneers.skills.cs'}}</label>
+            </div>
+          </div>
+          <div class="row-2">
+            <div class="field">
+              <input type="number" name="system.stats.cs" value="{{system.stats.cs}}" placeholder="0">
+            </div>
+          </div>
+          <div class="row-3">
+            <div class="field">
+              <label>{{localize 'league-of-dungeoneers.stats.dmg'}}</label>
+            </div>
+          </div>
+          <div class="row-4">
+            <div class="field">
+              <input type="text" name="system.stats.dmg" value="{{system.stats.dmg}}" placeholder="0">
+            </div>
+          </div>
+        </div>
+        <!-- Column 3: Ranged Skill, Resolve -->
+        <div class="column">
+          <div class="row-1">
+            <div class="field">
+              <label>{{localize 'league-of-dungeoneers.skills.rs'}}</label>
+            </div>
+          </div>
+          <div class="row-2">
+            <div class="field">
+              <input type="number" name="system.stats.rs" value="{{system.stats.rs}}" placeholder="0">
+            </div>
+          </div>
+          <div class="row-3">
+            <div class="field">
+              <label>{{localize 'league-of-dungeoneers.stats.res'}}</label>
+            </div>
+          </div>
+          <div class="row-4">
+            <div class="field">
+              <input type="number" name="system.stats.res" value="{{system.stats.res}}" placeholder="0">
+            </div>
+          </div>
+        </div>
+        <!-- Column 4: To Hit, Natural Armor -->
+        <div class="column">
+          <div class="row-1">
+            <div class="field">
+              <label>{{localize 'league-of-dungeoneers.stats.toHit'}}</label>
+            </div>
+          </div>
+          <div class="row-2">
+            <div class="field">
+              <input type="number" name="system.stats.toHit" value="{{system.stats.toHit}}" placeholder="0">
+            </div>
+          </div>
+          <div class="row-3">
+            <div class="field">
+              <label>Nat. Armor</label>
+            </div>
+          </div>
+          <div class="row-4">
+            <div class="field">
+              <input type="number" name="system.stats.na" value="{{system.stats.na}}" placeholder="0">
+            </div>
+          </div>
+        </div>
+        <!-- Column 5: Movement, Dexterity -->
+        <div class="column">
+          <div class="row-1">
+            <div class="field">
+              <label>{{localize 'league-of-dungeoneers.stats.m'}}</label>
+            </div>
+          </div>
+          <div class="row-2">
+            <div class="field">
+              <input type="number" name="system.stats.m" value="{{system.stats.m}}" placeholder="0">
+            </div>
+          </div>
+          <div class="row-3">
+            <div class="field">
+              <label>{{localize 'league-of-dungeoneers.stats.dex'}}</label>
+            </div>
+          </div>
+          <div class="row-4">
+            <div class="field">
+              <input type="number" name="system.stats.dex" value="{{system.stats.dex}}" placeholder="0">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Special Rules Section -->
+    <div class="special-rules">
+      <div class="special-rules-header">
+        <span>{{localize 'league-of-dungeoneers.stats.specialRules'}}</span>
+      </div>
+      <div class="special-rules-list" data-drop-target="special-rule">
+        {{#each system.specialRules as |rule index|}}
+        <div class="special-rule-item">
+          <input type="text" name="system.specialRules.{{index}}.name" value="{{rule.name}}" placeholder="Cause Fear">
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  
+    <!-- Weapons Section -->
+    <div class="weapons">
+      <div class="weapons-header">
+        <span>{{localize 'league-of-dungeoneers.stats.name'}}</span>
+        <span>{{localize 'league-of-dungeoneers.stats.dmg'}}</span>
+      </div>
+      <div class="weapons-list" data-drop-target="weapon">
+        {{#each system.weapons as |weapon index|}}
+        <div class="weapon-item">
+          <input type="text" name="system.weapons.{{index}}.name" value="{{weapon.name}}" placeholder="Longsword">
+          <input type="text" name="system.weapons.{{index}}.dmg" value="{{weapon.dmg}}" placeholder="1d8">
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  
+    <!-- Armor Section -->
+    <div class="armor-section">
+      <label>{{localize 'league-of-dungeoneers.stats.armor'}}</label>
+      <input type="number" name="system.armor.defense" value="{{system.armor.defense}}" placeholder="0">
+    </div>
+  </div>

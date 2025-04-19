@@ -1,4 +1,70 @@
-/* league-of-dungeoneers.css */
+/* Imports (keep only if files exist) */
 @import url("global.css");
-@import url("actor-sheet.css");
 @import url("item-sheet.css");
+@import url("actor-sheet.css");
+
+/* Party Overlay */
+#board [data-application-id="party-overlay"] {
+  width: 220px !important;
+  height: 160px !important;
+  background: url("systems/league-of-dungeoneers/assets/sheet-bordered-background.png") no-repeat center center !important;
+  background-size: cover !important;
+  background-color: rgba(255, 0, 0, 0.5) !important; /* Debug: red fallback */
+  border: 2px solid red !important; /* Debug: red border */
+  border-radius: 5px !important;
+  padding: 10px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  z-index: 150 !important; /* Increased to ensure above canvas layers */
+  visibility: visible !important;
+  opacity: 1 !important;
+  box-sizing: border-box !important;
+}
+
+#board [data-application-id="party-overlay"] .overlay-section {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  height: 45% !important;
+}
+
+#board [data-application-id="party-overlay"] .overlay-section label {
+  font-family: "Fanta", serif !important;
+  font-size: 16px !important;
+  text-align: center !important;
+  color: #1c2526 !important;
+  margin-bottom: 5px !important;
+}
+
+#board [data-application-id="party-overlay"] .control-group {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  justify-content: center !important;
+}
+
+#board [data-application-id="party-overlay"] .control-group input {
+  width: 50px !important;
+  font-size: 14px !important;
+  text-align: center !important;
+  border: 1px solid #7a7971 !important;
+  background: rgba(255, 255, 255, 0.5) !important;
+  padding: 2px !important;
+  border-radius: 3px !important;
+}
+
+#board [data-application-id="party-overlay"] .control-group i {
+  cursor: pointer !important;
+  font-size: 16px !important;
+  color: #1c2526 !important;
+}
+
+#board [data-application-id="party-overlay"] .lock-toggle {
+  position: absolute !important;
+  top: 5px !important;
+  right: 5px !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+  color: #1c2526 !important;
+}

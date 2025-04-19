@@ -1,10 +1,49 @@
-<div class="item-race">
-    <label>STR Formula: <input name="system.stats.str" type="text" value="{{system.stats.str}}" /></label>
-    <label>CON Formula: <input name="system.stats.con" type="text" value="{{system.stats.con}}" /></label>
-    <label>DEX Formula: <input name="system.stats.dex" type="text" value="{{system.stats.dex}}" /></label>
-    <label>WIS Formula: <input name="system.stats.wis" type="text" value="{{system.stats.wis}}" /></label>
-    <label>RES Formula: <input name="system.stats.res" type="text" value="{{system.stats.res}}" /></label>
-    <label>Traits: <input name="system.traits" type="text" value="{{system.traits}}" /></label>
-    <label>Limitations: <input name="system.limitations" type="text" value="{{system.limitations}}" /></label>
-    <label>Hit Die: <input name="system.hitDie" type="text" value="{{system.hitDie}}" /></label>
+<div class="race-details">
+  <!-- Row 1: STR Formula | CON Formula | DEX Formula -->
+  <div class="item-row row-compact">
+    <div class="field">
+      <label>STR Formula</label>
+      <input name="system.stats.str" type="text" value="{{system.stats.str}}" placeholder="STR Formula" />
+    </div>
+    <div class="field">
+      <label>CON Formula</label>
+      <input name="system.stats.con" type="text" value="{{system.stats.con}}" placeholder="CON Formula" />
+    </div>
+    <div class="field">
+      <label>DEX Formula</label>
+      <input name="system.stats.dex" type="text" value="{{system.stats.dex}}" placeholder="DEX Formula" />
+    </div>
   </div>
+
+  <!-- Row 2: WIS Formula | RES Formula | Hit Die -->
+  <div class="item-row row-compact">
+    <div class="field">
+      <label>WIS Formula</label>
+      <input name="system.stats.wis" type="text" value="{{system.stats.wis}}" placeholder="WIS Formula" />
+    </div>
+    <div class="field">
+      <label>RES Formula</label>
+      <input name="system.stats.res" type="text" value="{{system.stats.res}}" placeholder="RES Formula" />
+    </div>
+    <div class="field">
+      <label>Hit Die</label>
+      <input name="system.hitDie" type="text" value="{{system.hitDie}}" placeholder="Hit Die" />
+    </div>
+  </div>
+
+  <!-- Row 3: Traits -->
+  <div class="item-row">
+    <div class="field full-width">
+      <label>Traits</label>
+      <input name="system.traits" type="text" value="{{system.traits}}" placeholder="Traits" />
+    </div>
+  </div>
+
+  <!-- Row 4: Limitations -->
+  <div class="item-row">
+    <div class="field full-width">
+      <label>Limitations</label>
+      <input name="system.limitations" type="text" value="{{system.limitations}}" placeholder="Limitations" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<form class="lod-monster-sheet">
+    <header class="sheet-header">
+      <div class="portrait">
+        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" width="100" height="100">
+      </div>
+      <div class="center-container">
+        <div class="row-1">
+          <div class="name-field">
+            <label>{{localize 'league-of-dungeoneers.stats.name'}}</label>
+            <input type="text" name="name" value="{{actor.name}}" placeholder="{{localize 'league-of-dungeoneers.stats.name'}}">
+          </div>
+        </div>
+        <div class="row-2">
+          <div class="field type-field">
+            <label>{{localize 'league-of-dungeoneers.stats.type'}}</label>
+            <select name="system.type">
+              <option value="Bandit" {{#if (eq system.type "Bandit")}}selected{{/if}}>Bandit</option>
+              <option value="Orc" {{#if (eq system.type "Orc")}}selected{{/if}}>Orc</option>
+              <option value="Dark Elf" {{#if (eq system.type "Dark Elf")}}selected{{/if}}>Dark Elf</option>
+              <option value="Undead" {{#if (eq system.type "Undead")}}selected{{/if}}>Undead</option>
+              <option value="Beast" {{#if (eq system.type "Beast")}}selected{{/if}}>Beast</option>
+              <option value="Reptile" {{#if (eq system.type "Reptile")}}selected{{/if}}>Reptile</option>
+              <option value="Exotic" {{#if (eq system.type "Exotic")}}selected{{/if}}>Exotic</option>
+            </select>
+          </div>
+        </div>
+        <div class="row-3">
+          <div class="field">
+            <label>{{localize 'league-of-dungeoneers.stats.xp'}}</label>
+            <input type="number" name="system.xp" value="{{system.xp}}" placeholder="0">
+          </div>
+          <div class="field">
+            <label>{{localize 'league-of-dungeoneers.stats.loot'}}</label>
+            <input type="text" name="system.loot" value="{{system.loot}}" placeholder="T1">
+          </div>
+        </div>
+      </div>
+      <div class="logo">
+        <img src="systems/league-of-dungeoneers/assets/actor-icon.png" alt="League of Dungeoneers Logo" width="100" height="100">
+      </div>
+    </header>
+  
+    <nav class="sheet-tabs tabs" data-group="primary">
+      <a class="item" data-tab="main">{{localize 'league-of-dungeoneers.stats.main'}}</a>
+      <a class="item" data-tab="notes">{{localize 'league-of-dungeoneers.stats.notes'}}</a>
+    </nav>
+  
+    <section class="sheet-body">
+      <div class="tab actor-monster-main" data-group="primary" data-tab="main">
+        {{> "actor-monster-main"}}
+      </div>
+      <div class="tab actor-monster-notes" data-group="primary" data-tab="notes">
+        {{> "actor-notes"}}
+      </div>
+    </section>
+  </form>

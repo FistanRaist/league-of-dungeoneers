@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["character"],
+    "types": ["character", "monster"],
     "character": {
       "name": { "type": "String", "default": "" },
       "system": {
@@ -212,10 +212,48 @@
         ],
         "notes": { "type": "String", "default": "" }
       }
+    },
+    "monster": {
+      "name": { "type": "String", "default": "" },
+      "system": {
+        "type": { "type": "String", "default": "" },
+        "number": { "type": "String", "default": "" },
+        "xp": { "type": "Number", "default": 0 },
+        "loot": { "type": "String", "default": "" },
+        "stats": {
+          "cs": { "type": "Number", "default": 0 },
+          "rs": { "type": "Number", "default": 0 },
+          "hp": { "type": "Number", "default": 0 },
+          "dmg": { "type": "String", "default": "" },
+          "na": { "type": "Number", "default": 0 },
+          "m": { "type": "Number", "default": 0 },
+          "dex": { "type": "Number", "default": 0 },
+          "res": { "type": "Number", "default": 0 },
+          "toHit": { "type": "Number", "default": 0 }
+        },
+        "weapons": [
+          {
+            "name": { "type": "String", "default": "" },
+            "dmg": { "type": "String", "default": "" }
+          }
+        ],
+        "armor": [
+          {
+            "name": { "type": "String", "default": "" },
+            "defense": { "type": "Number", "default": 0 }
+          }
+        ],
+        "specialRules": [
+          {
+            "name": { "type": "String", "default": "" }
+          }
+        ],
+        "notes": { "type": "String", "default": "" }
+      }
     }
   },
   "Item": {
-    "types": ["weapon", "armor", "equipment", "ingredient", "potion", "spell", "prayer", "talent", "perk", "profession", "race", "background"],
+    "types": ["weapon", "armor", "equipment", "ingredient", "potion", "spell", "prayer", "talent", "perk", "profession", "race", "background", "specialRule"],
     "weapon": {
       "dmg": { "type": "String", "default": "" },
       "reload": { "type": "String", "default": "", "enum": ["", "1", "2", "3"] },
@@ -296,6 +334,12 @@
       "personalQuest": { "type": "String", "default": "" },
       "description": { "type": "String", "default": "" },
       "effect": { "type": "String", "default": "" }
+    },
+    "specialRule": {
+      "name": { "type": "String", "default": "" },
+      "type": { "type": "String", "default": "Passive", "enum": ["Passive", "Active"] },
+      "effect": { "type": "String", "default": "" },
+      "description": { "type": "String", "default": "" }
     }
   }
 }

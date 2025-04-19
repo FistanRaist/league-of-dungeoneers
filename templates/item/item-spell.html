@@ -1,7 +1,29 @@
-<div class="item-spell">
-    <label>CV: <input name="system.cv" type="number" value="{{system.cv}}" /></label>
-    <label>Mana: <input name="system.mana" type="number" value="{{system.mana}}" /></label>
-    <label>Upkeep: <input name="system.upkeep" type="text" value="{{system.upkeep}}" /></label>
-    <label>Special: <input name="system.special" type="text" value="{{system.special}}" /></label>
-    <label>School: <input name="system.school" type="text" value="{{system.school}}" /></label>
+<div class="spell-details">
+  <!-- Row 1: CV | Mana | Upkeep -->
+  <div class="item-row row-compact">
+    <div class="field">
+      <label>CV</label>
+      <input name="system.cv" type="number" value="{{system.cv}}" placeholder="0" />
+    </div>
+    <div class="field">
+      <label>Mana</label>
+      <input name="system.mana" type="number" value="{{system.mana}}" placeholder="0" />
+    </div>
+    <div class="field">
+      <label>Upkeep</label>
+      <input name="system.upkeep" type="text" value="{{system.upkeep}}" placeholder="Upkeep" />
+    </div>
   </div>
+
+  <!-- Row 2: Special | School -->
+  <div class="item-row row-compact">
+    <div class="field full-width">
+      <label>Special</label>
+      <input name="system.special" type="text" value="{{system.special}}" placeholder="Special" />
+    </div>
+    <div class="field">
+      <label>School</label>
+      <input name="system.school" type="text" value="{{system.school}}" placeholder="School" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,1170 @@
+<div class="actor-combat">
+  <div class="weapons">
+    <h3>Equipped Weapons</h3>
+    <div class="weapons-header">
+      <span>Weapon</span>
+      <span>Hand/Slot</span>
+      <span>Damage</span>
+      <span>Durability</span>
+      <span>Special</span>
+    </div>
+    {{#each system.weapons as |weapon index|}}
+    <div class="weapon-item">
+      <div class="field">
+        <label>Name:</label>
+        <input type="text" name="system.weapons.{{index}}.name" value="{{weapon.name}}" placeholder="Sword">
+      </div>
+      <div class="field">
+        <label>Hand/Slot:</label>
+        <input type="text" name="system.weapons.{{index}}.slot" value="{{weapon.slot}}" placeholder="Main Hand">
+      </div>
+      <div class="field">
+        <label>1H/2H:</label>
+        <input type="text" name="system.weapons.{{index}}.hands" value="{{weapon.hands}}" placeholder="1H">
+      </div>
+      <div class="field">
+        <label>DMG:</label>
+        <input type="text" name="system.weapons.{{index}}.dmg" value="{{weapon.dmg}}" placeholder="1d8">
+      </div>
+      <div class="field">
+        <label>Class:</label>
+        <input type="text" name="system.weapons.{{index}}.class" value="{{weapon.class}}" placeholder="Melee">
+      </div>
+      <div class="field">
+        <label>ENC:</label>
+        <input type="number" name="system.weapons.{{index}}.enc" value="{{weapon.enc}}" placeholder="1">
+      </div>
+      <div class="field">
+        <label>Durability:</label>
+        <input type="number" name="system.weapons.{{index}}.durability" value="{{weapon.durability}}" placeholder="10">
+      </div>
+      <div class="field">
+        <label>Special:</label>
+        <input type="text" name="system.weapons.{{index}}.special" value="{{weapon.special}}" placeholder="None">
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <div class="armor">
+    <h3>Armor</h3>
+    <div class="armor-list">
+      <!-- Head -->
+      <div class="armor-section">
+        <div class="armor-header">
+          <span>Head</span>
+          <span>Defense</span>
+          <span>Durability</span>
+          <span>Special</span>
+        </div>
+      </div>
+      <!-- Arms -->
+      <div class="armor-section">
+        <div class="armor-header">
+          <span>Arms</span>
+          <span>Defense</span>
+          <span>Durability</span>
+          <span>Special</span>
+        </div>
+      </div>
+      <!-- Shield -->
+      <div class="armor-section">
+        <div class="armor-header">
+          <span>Shield</span>
+          <span>Defense</span>
+          <span>Durability</span>
+          <span>Special</span>
+        </div>
+      </div>
+      <!-- Torso -->
+      <div class="armor-section">
+        <div class="armor-header">
+          <span>Torso</span>
+          <span>Defense</span>
+          <span>Durability</span>
+          <span>Special</span>
+        </div>
+      </div>
+      <!-- Legs -->
+      <div class="armor-section">
+        <div class="armor-header">
+          <span>Legs</span>
+          <span>Defense</span>
+          <span>Durability</span>
+          <span>Special</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="quickslots">
+    <h3>Quickslot Items</h3>
+    <div class="quickslot-columns">
+      <div class="quickslot-column">
+        <div class="quickslot-header">
+          <span>Gear</span>
+          <span>Durability</span>
+        </div>
+        {{#each system.quickslots as |item index|}}
+          {{#if (lt index 5)}}
+            <div class="quickslot-item">
+              <div class="field">
+                <label>Item {{add index 1}}:</label>
+                <input type="text" name="system.quickslots.{{index}}.name" value="{{item.name}}" placeholder="Potion">
+              </div>
+              <div class="field">
+                <label>Durability:</label>
+                <input type="number" name="system.quickslots.{{index}}.durability" value="{{item.durability}}" placeholder="5">
+              </div>
+            </div>
+          {{/if}}
+        {{/each}}
+      </div>
+      <div class="quickslot-column">
+        <div class="quickslot-header">
+          <span>Gear</span>
+          <span>Durability</span>
+        </div>
+        {{#each system.quickslots as |item index|}}
+          {{#if (and (gte index 5) (lt index 9))}}
+            <div class="quickslot-item">
+              <div class="field">
+                <label>Item {{add index 1}}:</label>
+                <input type="text" name="system.quickslots.{{index}}.name" value="{{item.name}}" placeholder="Scroll">
+              </div>
+              <div class="field">
+                <label>Durability:</label>
+                <input type="number" name="system.quickslots.{{index}}.durability" value="{{item.durability}}" placeholder="3">
+              </div>
+            </div>
+          {{/if}}
+        {{/each}}
+        <div class="quiver-header">
+          <span>Quiver</span>
+          <span>Quantity</span>
+        </div>
+        {{#each system.quickslots as |item index|}}
+          {{#if (eq index 9)}}
+            <div class="quickslot-item quiver">
+              <div class="field">
+                <label>Quiver Ammo:</label>
+                <input type="text" name="system.quickslots.{{index}}.ammo" value="{{item.ammo}}" placeholder="Arrows">
+              </div>
+              <div class="field">
+                <label>Quantity:</label>
+                <input type="number" name="system.quickslots.{{index}}.quantity" value="{{item.quantity}}" placeholder="20">
+              </div>
+            </div>
+          {{/if}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+  <div class="accessories">
+    <h3>Accessories</h3>
+    <div class="accessories-list">
+      <div class="accessory-column">
+        <div class="accessory-header">
+          <span>Necklace</span>
+          <span>Special</span>
+        </div>
+        {{#each system.accessories.necklaces as |necklace index|}}
+          <div class="accessory-item">
+            <div class="field">
+              <input type="text" name="system.accessories.necklaces.{{index}}.name" value="{{necklace.name}}" placeholder="Amulet">
+            </div>
+            <div class="field">
+              <input type="text" name="system.accessories.necklaces.{{index}}.special" value="{{necklace.special}}" placeholder="None">
+            </div>
+          </div>
+        {{/each}}
+      </div>
+      <div class="accessory-column">
+        <div class="accessory-header">
+          <span>Ring</span>
+          <span>Special</span>
+        </div>
+        {{#each system.accessories.rings as |ring index|}}
+          <div class="accessory-item">
+            <div class="field">
+              <input type="text" name="system.accessories.rings.{{index}}.name" value="{{ring.name}}" placeholder="Ring">
+            </div>
+            <div class="field">
+              <input type="text" name="system.accessories.rings.{{index}}.special" value="{{ring.special}}" placeholder="None">
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+------------
+
+
+<div class="actor-defense">
+  <h3>Armor</h3>
+  <div class="armor-section">
+    <h4>Head</h4>
+    <div class="field">
+      <label>Name:</label>
+      <input type="text" name="system.armor.head.name" value="{{system.armor.head.name}}" placeholder="Helmet">
+    </div>
+    <div class="field">
+      <label>DEF:</label>
+      <input type="number" name="system.armor.head.def" value="{{system.armor.head.def}}" placeholder="2">
+    </div>
+    <div class="field">
+      <label>Special:</label>
+      <input type="text" name="system.armor.head.special" value="{{system.armor.head.special}}" placeholder="None">
+    </div>
+    <div class="field">
+      <label>Durability:</label>
+      <input type="number" name="system.armor.head.durability" value="{{system.armor.head.durability}}" placeholder="10">
+    </div>
+  </div>
+  <div class="armor-section">
+    <h4>Arms</h4>
+    <div class="field">
+      <label>Name:</label>
+      <input type="text" name="system.armor.arms.name" value="{{system.armor.arms.name}}" placeholder="Gauntlets">
+    </div>
+    <div class="field">
+      <label>DEF:</label>
+      <input type="number" name="system.armor.arms.def" value="{{system.armor.arms.def}}" placeholder="1">
+    </div>
+    <div class="field">
+      <label>Special:</label>
+      <input type="text" name="system.armor.arms.special" value="{{system.armor.arms.special}}" placeholder="None">
+    </div>
+    <div class="field">
+      <label>Durability:</label>
+      <input type="number" name="system.armor.arms.durability" value="{{system.armor.arms.durability}}" placeholder="8">
+    </div>
+  </div>
+  <div class="armor-section">
+    <h4>Legs</h4>
+    <div class="field">
+      <label>Name:</label>
+      <input type="text" name="system.armor.legs.name" value="{{system.armor.legs.name}}" placeholder="Greaves">
+    </div>
+    <div class="field">
+      <label>DEF:</label>
+      <input type="number" name="system.armor.legs.def" value="{{system.armor.legs.def}}" placeholder="1">
+    </div>
+    <div class="field">
+      <label>Special:</label>
+      <input type="text" name="system.armor.legs.special" value="{{system.armor.legs.special}}" placeholder="None">
+    </div>
+    <div class="field">
+      <label>Durability:</label>
+      <input type="number" name="system.armor.legs.durability" value="{{system.armor.legs.durability}}" placeholder="8">
+    </div>
+  </div>
+  <div class="armor-section">
+    <h4>Torso</h4>
+    <div class="field">
+      <label>Name:</label>
+      <input type="text" name="system.armor.torso.name" value="{{system.armor.torso.name}}" placeholder="Breastplate">
+    </div>
+    <div class="field">
+      <label>DEF:</label>
+      <input type="number" name="system.armor.torso.def" value="{{system.armor.torso.def}}" placeholder="3">
+    </div>
+    <div class="field">
+      <label>Special:</label>
+      <input type="text" name="system.armor.torso.special" value="{{system.armor.torso.special}}" placeholder="None">
+    </div>
+    <div class="field">
+      <label>Durability:</label>
+      <input type="number" name="system.armor.torso.durability" value="{{system.armor.torso.durability}}" placeholder="12">
+    </div>
+  </div>
+  <div class="armor-section">
+    <h4>Shield</h4>
+    <div class="field">
+      <label>Name:</label>
+      <input type="text" name="system.armor.shield.name" value="{{system.armor.shield.name}}" placeholder="Shield">
+    </div>
+    <div class="field">
+      <label>DEF:</label>
+      <input type="number" name="system.armor.shield.def" value="{{system.armor.shield.def}}" placeholder="2">
+    </div>
+    <div class="field">
+      <label>Special:</label>
+      <input type="text" name="system.armor.shield.special" value="{{system.armor.shield.special}}" placeholder="None">
+    </div>
+    <div class="field">
+      <label>Durability:</label>
+      <input type="number" name="system.armor.shield.durability" value="{{system.armor.shield.durability}}" placeholder="10">
+    </div>
+  </div>
+  <div class="accessories">
+    <h3>Accessories</h3>
+    <div class="field">
+      <label>Necklace:</label>
+      <input type="text" name="system.accessories.necklace.name" value="{{system.accessories.necklace.name}}" placeholder="Amulet">
+      <label>Special:</label>
+      <input type="text" name="system.accessories.necklace.special" value="{{system.accessories.necklace.special}}" placeholder="None">
+    </div>
+    <div class="field">
+      <label>Ring 1:</label>
+      <input type="text" name="system.accessories.ring1.name" value="{{system.accessories.ring1.name}}" placeholder="Ring">
+      <label>Special:</label>
+      <input type="text" name="system.accessories.ring1.special" value="{{system.accessories.ring1.special}}" placeholder="None">
+    </div>
+    <div class="field">
+      <label>Ring 2:</label>
+      <input type="text" name="system.accessories.ring2.name" value="{{system.accessories.ring2.name}}" placeholder="Ring">
+      <label>Special:</label>
+      <input type="text" name="system.accessories.ring2.special" value="{{system.accessories.ring2.special}}" placeholder="None">
+    </div>
+    <div class="field">
+      <label>Relic (N):</label>
+      <input type="text" name="system.accessories.relicN.name" value="{{system.accessories.relicN.name}}" placeholder="Relic">
+      <label>Special:</label>
+      <input type="text" name="system.accessories.relicN.special" value="{{system.accessories.relicN.special}}" placeholder="None">
+    </div>
+    <div class="field">
+      <label>Relic (R):</label>
+      <input type="text" name="system.accessories.relicR.name" value="{{system.accessories.relicR.name}}" placeholder="Relic">
+      <label>Special:</label>
+      <input type="text" name="system.accessories.relicR.special" value="{{system.accessories.relicR.special}}" placeholder="None">
+    </div>
+  </div>
+</div>
+
+
+------------
+
+
+<div class="actor-effects">
+  <h3>Effects</h3>
+  <p>Effects system to be implemented later.</p>
+</div>
+
+
+------------
+
+
+<div class="actor-inventory">
+  <div class="inventory-stats">
+    <div class="columns">
+      <div class="column">
+        <div class="field">
+          <label>Encumbrance</label>
+          <input type="number" name="system.encumbrance.total" value="{{system.encumbrance.total}}" placeholder="0">
+        </div>
+      </div>
+      <div class="column">
+        <div class="field">
+          <label>Carried</label>
+          <input type="number" name="system.encumbrance.carried" value="{{system.encumbrance.carried}}" placeholder="0">
+        </div>
+      </div>
+      <div class="column">
+        <div class="field">
+          <label>Coins</label>
+          <input type="number" name="system.wealth.coins" value="{{system.wealth.coins}}" placeholder="0">
+        </div>
+      </div>
+    </div>
+  </div>
+  <h3>Equipment</h3>
+  <div class="equipment-list">
+    <div class="equipment-header">
+      <span>Gear</span>
+      <span>Encumbrance</span>
+      <span>Cost</span>
+    </div>
+    {{#each system.inventory as |item index|}}
+      <div class="equipment-item">
+        <div class="field">
+          <input type="text" name="system.inventory.{{index}}.name" value="{{item.name}}" placeholder="Item Name">
+        </div>
+        <div class="field">
+          <input type="number" name="system.inventory.{{index}}.encumbrance" value="{{item.encumbrance}}" placeholder="1">
+        </div>
+        <div class="field">
+          <input type="number" name="system.inventory.{{index}}.cost" value="{{item.cost}}" placeholder="10">
+        </div>
+      </div>
+    {{/each}}
+  </div>
+  <h3>Companion</h3>
+</div>
+
+
+------------
+
+
+<div class="actor-main">
+  <div class="abilities">
+    <!-- Ability Columns (Strength, Constitution, Dexterity, Wisdom, Resolve) -->
+    <div class="columns">
+      <!-- Column 1: Strength, Damage Bonus -->
+      <div class="column">
+        <div class="row-1">
+          <div class="field">
+            <label>Strength:</label>
+          </div>
+        </div>
+        <div class="row-2">
+          <div class="field">
+            <input type="number" name="system.abilities.strength.value" value="{{system.abilities.strength.value}}" placeholder="0">
+          </div>
+        </div>
+        <div class="row-3">
+          <div class="field">
+            <label>Damage Bonus:</label>
+          </div>
+        </div>
+        <div class="row-4">
+          <div class="field">
+            <input type="number" name="system.abilities.strength.damageBonus" value="{{system.combat.damageBonus}}" placeholder="0">
+          </div>
+        </div>
+      </div>
+      <!-- Column 2: Constitution, Natural Armor -->
+      <div class="column">
+        <div class="row-1">
+          <div class="field">
+            <label>Constitution:</label>
+          </div>
+        </div>
+        <div class="row-2">
+          <div class="field">
+            <input type="number" name="system.abilities.constitution.value" value="{{system.abilities.constitution.value}}" placeholder="0">
+          </div>
+        </div>
+        <div class="row-3">
+          <div class="field">
+            <label>Natural Armor:</label>
+          </div>
+        </div>
+        <div class="row-4">
+          <div class="field">
+            <input type="number" name="system.combat.naturalArmor" value="{{system.combat.naturalArmor}}" placeholder="0">
+          </div>
+        </div>
+      </div>
+      <!-- Column 3: Dexterity, Movement -->
+      <div class="column">
+        <div class="row-1">
+          <div class="field">
+            <label>Dexterity:</label>
+          </div>
+        </div>
+        <div class="row-2">
+          <div class="field">
+            <input type="number" name="system.abilities.dexterity.value" value="{{system.abilities.dexterity.value}}" placeholder="0">
+          </div>
+        </div>
+        <div class="row-3">
+          <div class="field">
+            <label>Movement:</label>
+          </div>
+        </div>
+        <div class="row-4">
+          <div class="field">
+            <input type="number" name="system.combat.movement" value="{{system.combat.movement}}" placeholder="0">
+          </div>
+        </div>
+      </div>
+      <!-- Column 4: Wisdom, Mana -->
+      <div class="column">
+        <div class="row-1">
+          <div class="field">
+            <label>Wisdom:</label>
+          </div>
+        </div>
+        <div class="row-2">
+          <div class="field">
+            <input type="number" name="system.abilities.wisdom.value" value="{{system.abilities.wisdom.value}}" placeholder="0">
+          </div>
+        </div>
+        <div class="row-3">
+          <div class="field">
+            <label>Mana:</label>
+          </div>
+        </div>
+        <div class="row-4">
+          <div class="field">
+            <input type="number" name="system.combat.mana" value="{{system.combat.mana}}" placeholder="0">
+          </div>
+        </div>
+      </div>
+      <!-- Column 5: Resolve, Party Morale -->
+      <div class="column">
+        <div class="row-1">
+          <div class="field">
+            <label>Resolve:</label>
+          </div>
+        </div>
+        <div class="row-2">
+          <div class="field">
+            <input type="number" name="system.abilities.resolve.value" value="{{system.abilities.resolve.value}}" placeholder="0">
+          </div>
+        </div>
+        <div class="row-3">
+          <div class="field">
+            <label>Party Morale:</label>
+          </div>
+        </div>
+        <div class="row-4">
+          <div class="field">
+            <input type="number" name="system.combat.partyMoraleModifier" value="{{system.combat.partyMoraleModifier}}" placeholder="0">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Hit Points, Luck, Energy, Sanity in a Single Row -->
+    <div class="stats-row">
+      <!-- Hit Points -->
+      <div class="stat">
+        <label>Hit Points</label>
+        <div class="stat-fields">
+          <input type="number" name="system.combat.hitPoints.value" value="{{system.combat.hitPoints.value}}" placeholder="0">
+          <span>/</span>
+          <input type="number" name="system.combat.hitPoints.current" value="{{system.combat.hitPoints.current}}" placeholder="0">
+        </div>
+      </div>
+      <!-- Luck -->
+      <div class="stat">
+        <label>Luck</label>
+        <div class="stat-fields">
+          <input type="number" name="system.combat.luck.value" value="{{system.combat.luck.value}}" placeholder="0">
+          <span>/</span>
+          <input type="number" name="system.combat.luck.current" value="{{system.combat.luck.current}}" placeholder="0">
+        </div>
+      </div>
+      <!-- Energy -->
+      <div class="stat">
+        <label>Energy</label>
+        <div class="stat-fields">
+          <input type="number" name="system.combat.energy.value" value="{{system.combat.energy.value}}" placeholder="0">
+          <span>/</span>
+          <input type="number" name="system.combat.energy.current" value="{{system.combat.energy.current}}" placeholder="0">
+        </div>
+      </div>
+      <!-- Sanity -->
+      <div class="stat">
+        <label>Sanity</label>
+        <div class="stat-fields">
+          <input type="number" name="system.combat.sanity.value" value="{{system.combat.sanity.value}}" placeholder="0">
+          <span>/</span>
+          <input type="number" name="system.combat.sanity.current" value="{{system.combat.sanity.current}}" placeholder="0">
+        </div>
+      </div>
+    </div>
+    <!-- Condition Row with Up to Three Dropdowns -->
+    <div class="conditions-row">
+      <label>Conditions:</label>
+      <select name="system.combat.conditions[0]">
+        <option value="" {{#if (eq (lookup system.combat.conditions 0) "")}}selected{{/if}}>-</option>
+        <option value="Healthy" {{#if (eq (lookup system.combat.conditions 0) "Healthy")}}selected{{/if}}>Healthy</option>
+        <option value="Poisoned" {{#if (eq (lookup system.combat.conditions 0) "Poisoned")}}selected{{/if}}>Poisoned</option>
+        <option value="Stunned" {{#if (eq (lookup system.combat.conditions 0) "Stunned")}}selected{{/if}}>Stunned</option>
+        <option value="Bleeding" {{#if (eq (lookup system.combat.conditions 0) "Bleeding")}}selected{{/if}}>Bleeding</option>
+        <option value="Unconscious" {{#if (eq (lookup system.combat.conditions 0) "Unconscious")}}selected{{/if}}>Unconscious</option>
+      </select>
+      <select name="system.combat.conditions[1]">
+        <option value="" {{#if (eq (lookup system.combat.conditions 1) "")}}selected{{/if}}>-</option>
+        <option value="Healthy" {{#if (eq (lookup system.combat.conditions 1) "Healthy")}}selected{{/if}}>Healthy</option>
+        <option value="Poisoned" {{#if (eq (lookup system.combat.conditions 1) "Poisoned")}}selected{{/if}}>Poisoned</option>
+        <option value="Stunned" {{#if (eq (lookup system.combat.conditions 1) "Stunned")}}selected{{/if}}>Stunned</option>
+        <option value="Bleeding" {{#if (eq (lookup system.combat.conditions 1) "Bleeding")}}selected{{/if}}>Bleeding</option>
+        <option value="Unconscious" {{#if (eq (lookup system.combat.conditions 1) "Unconscious")}}selected{{/if}}>Unconscious</option>
+      </select>
+      <select name="system.combat.conditions[2]">
+        <option value="" {{#if (eq (lookup system.combat.conditions 2) "")}}selected{{/if}}>-</option>
+        <option value="Healthy" {{#if (eq (lookup system.combat.conditions 2) "Healthy")}}selected{{/if}}>Healthy</option>
+        <option value="Poisoned" {{#if (eq (lookup system.combat.conditions 2) "Poisoned")}}selected{{/if}}>Poisoned</option>
+        <option value="Stunned" {{#if (eq (lookup system.combat.conditions 2) "Stunned")}}selected{{/if}}>Stunned</option>
+        <option value="Bleeding" {{#if (eq (lookup system.combat.conditions 2) "Bleeding")}}selected{{/if}}>Bleeding</option>
+        <option value="Unconscious" {{#if (eq (lookup system.combat.conditions 2) "Unconscious")}}selected{{/if}}>Unconscious</option>
+      </select>
+    </div>
+  </div>
+  <div class="skills-divider">
+    <h3>Skills</h3>
+  </div>
+  <div class="skills">
+    <div class="skills-columns">
+      <div class="skills-column">
+        <div class="skills-header">
+          <span>Skill</span>
+          <span>Ability</span>
+          <span>Base</span>
+          <span>Modifier</span>
+        </div>
+        <!-- Skill 1: Combat (Dex) -->
+        <div class="skill-item">
+          <i class="fas fa-dice-d20 roll-skill"></i>
+          <span class="skill-name">Combat</span>
+          <span class="skill-ability">Dex</span>
+          <input type="number" name="system.skills.combat.value" value="{{system.skills.combat.value}}" placeholder="0">
+          <input type="number" name="system.skills.combat.modifier" value="{{system.skills.combat.modifier}}" placeholder="0">
+        </div>
+        <!-- Skill 2: Ranged (Dex) -->
+        <div class="skill-item">
+          <i class="fas fa-dice-d20 roll-skill"></i>
+          <span class="skill-name">Ranged</span>
+          <span class="skill-ability">Dex</span>
+          <input type="number" name="system.skills.ranged.value" value="{{system.skills.ranged.value}}" placeholder="0">
+          <input type="number" name="system.skills.ranged.modifier" value="{{system.skills.ranged.modifier}}" placeholder="0">
+        </div>
+        <!-- Skill 3: Dodge (Dex) -->
+        <div class="skill-item">
+          <i class="fas fa-dice-d20 roll-skill"></i>
+          <span class="skill-name">Dodge</span>
+          <span class="skill-ability">Dex</span>
+          <input type="number" name="system.skills.dodge.value" value="{{system.skills.dodge.value}}" placeholder="0">
+          <input type="number" name="system.skills.dodge.modifier" value="{{system.skills.dodge.modifier}}" placeholder="0">
+        </div>
+        <!-- Skill 4: Pick Locks (Dex) -->
+        <div class="skill-item">
+          <i class="fas fa-dice-d20 roll-skill"></i>
+          <span class="skill-name">Pick Locks</span>
+          <span class="skill-ability">Dex</span>
+          <input type="number" name="system.skills.pickLocks.value" value="{{system.skills.pickLocks.value}}" placeholder="0">
+          <input type="number" name="system.skills.pickLocks.modifier" value="{{system.skills.pickLocks.modifier}}" placeholder="0">
+        </div>
+        <!-- Skill 5: Barter (Wis) -->
+        <div class="skill-item">
+          <i class="fas fa-dice-d20 roll-skill"></i>
+          <span class="skill-name">Barter</span>
+          <span class="skill-ability">Wis</span>
+          <input type="number" name="system.skills.barter.value" value="{{system.skills.barter.value}}" placeholder="0">
+          <input type="number" name="system.skills.barter.modifier" value="{{system.skills.barter.modifier}}" placeholder="0">
+        </div>
+        <!-- Skill 6: Heal (Wis) -->
+        <div class="skill-item">
+          <i class="fas fa-dice-d20 roll-skill"></i>
+          <span class="skill-name">Heal</span>
+          <span class="skill-ability">Wis</span>
+          <input type="number" name="system.skills.heal.value" value="{{system.skills.heal.value}}" placeholder="0">
+          <input type="number" name="system.skills.heal.modifier" value="{{system.skills.heal.modifier}}" placeholder="0">
+        </div>
+      </div>
+      <div class="skills-column">
+        <div class="skills-header">
+          <span>Skill</span>
+          <span>Ability</span>
+          <span>Base</span>
+          <span>Modifier</span>
+        </div>
+        <!-- Skill 7: Alchemy (Wis) -->
+        <div class="skill-item">
+          <i class="fas fa-dice-d20 roll-skill"></i>
+          <span class="skill-name">Alchemy</span>
+          <span class="skill-ability">Wis</span>
+          <input type="number" name="system.skills.alchemy.value" value="{{system.skills.alchemy.value}}" placeholder="0">
+          <input type="number" name="system.skills.alchemy.modifier" value="{{system.skills.alchemy.modifier}}" placeholder="0">
+        </div>
+        <!-- Skill 8: Perception (Wis) -->
+        <div class="skill-item">
+          <i class="fas fa-dice-d20 roll-skill"></i>
+          <span class="skill-name">Perception</span>
+          <span class="skill-ability">Wis</span>
+          <input type="number" name="system.skills.perception.value" value="{{system.skills.perception.value}}" placeholder="0">
+          <input type="number" name="system.skills.perception.modifier" value="{{system.skills.perception.modifier}}" placeholder="0">
+        </div>
+        <!-- Skill 9: Arcane (Wis) -->
+        <div class="skill-item">
+          <i class="fas fa-dice-d20 roll-skill"></i>
+          <span class="skill-name">Arcane</span>
+          <span class="skill-ability">Wis</span>
+          <input type="number" name="system.skills.arcane.value" value="{{system.skills.arcane.value}}" placeholder="0">
+          <input type="number" name="system.skills.arcane.modifier" value="{{system.skills.arcane.modifier}}" placeholder="0">
+        </div>
+        <!-- Skill 10: Foraging (Con) -->
+        <div class="skill-item">
+          <i class="fas fa-dice-d20 roll-skill"></i>
+          <span class="skill-name">Foraging</span>
+          <span class="skill-ability">Con</span>
+          <input type="number" name="system.skills.foraging.value" value="{{system.skills.foraging.value}}" placeholder="0">
+          <input type="number" name="system.skills.foraging.modifier" value="{{system.skills.foraging.modifier}}" placeholder="0">
+        </div>
+        <!-- Skill 11: Prayers (Wis) -->
+        <div class="skill-item">
+          <i class="fas fa-dice-d20 roll-skill"></i>
+          <span class="skill-name">Prayers</span>
+          <span class="skill-ability">Wis</span>
+          <input type="number" name="system.skills.prayers.value" value="{{system.skills.prayers.value}}" placeholder="0">
+          <input type="number" name="system.skills.prayers.modifier" value="{{system.skills.prayers.modifier}}" placeholder="0">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+------------
+
+
+<div class="actor-notes">
+  {{editor system.notes target="system.notes" button=true owner=owner editable=editable}}
+</div>
+
+
+------------
+
+
+<div class="actor-prayers">
+  <div class="prayer-list">
+    <!-- Level 1 -->
+    <div class="prayer-level">
+      <div class="prayer-header">
+        <span>Level 1</span>
+        <span>Effect</span>
+      </div>
+      {{#each system.prayers.level1 as |prayer index|}}
+        <div class="prayer-item">
+          <div class="field">
+            <input type="text" name="system.prayers.level1.{{index}}.name" value="{{prayer.name}}" placeholder="Prayer Name">
+          </div>
+          <div class="field">
+            <input type="text" name="system.prayers.level1.{{index}}.effect" value="{{prayer.effect}}" placeholder="Description">
+          </div>
+        </div>
+      {{/each}}
+    </div>
+    <!-- Level 2 -->
+    <div class="prayer-level">
+      <div class="prayer-header">
+        <span>Level 2</span>
+        <span>Effect</span>
+      </div>
+      {{#each system.prayers.level2 as |prayer index|}}
+        <div class="prayer-item">
+          <div class="field">
+            <input type="text" name="system.prayers.level2.{{index}}.name" value="{{prayer.name}}" placeholder="Prayer Name">
+          </div>
+          <div class="field">
+            <input type="text" name="system.prayers.level2.{{index}}.effect" value="{{prayer.effect}}" placeholder="Description">
+          </div>
+        </div>
+      {{/each}}
+    </div>
+    <!-- Level 3 -->
+    <div class="prayer-level">
+      <div class="prayer-header">
+        <span>Level 3</span>
+        <span>Effect</span>
+      </div>
+      {{#each system.prayers.level3 as |prayer index|}}
+        <div class="prayer-item">
+          <div class="field">
+            <input type="text" name="system.prayers.level3.{{index}}.name" value="{{prayer.name}}" placeholder="Prayer Name">
+          </div>
+          <div class="field">
+            <input type="text" name="system.prayers.level3.{{index}}.effect" value="{{prayer.effect}}" placeholder="Description">
+          </div>
+        </div>
+      {{/each}}
+    </div>
+    <!-- Level 4 -->
+    <div class="prayer-level">
+      <div class="prayer-header">
+        <span>Level 4</span>
+        <span>Effect</span>
+      </div>
+      {{#each system.prayers.level4 as |prayer index|}}
+        <div class="prayer-item">
+          <div class="field">
+            <input type="text" name="system.prayers.level4.{{index}}.name" value="{{prayer.name}}" placeholder="Prayer Name">
+          </div>
+          <div class="field">
+            <input type="text" name="system.prayers.level4.{{index}}.effect" value="{{prayer.effect}}" placeholder="Description">
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+
+------------
+
+
+<div class="actor-recipes">
+  <div class="recipe-list">
+    <div class="recipe-header">
+      <span>Recipe</span>
+      <span>Component</span>
+      <span>Component</span>
+      <span>Component</span>
+      <span>Component</span>
+      <i class="fas fa-plus item-control add-recipe" title="Add Recipe"></i>
+    </div>
+    {{#each system.recipes as |recipe index|}}
+      <div class="recipe-item">
+        <div class="field">
+          <input type="text" name="system.recipes.{{index}}.name" value="{{recipe.name}}" placeholder="Recipe Name">
+        </div>
+        <div class="field">
+          <input type="text" name="system.recipes.{{index}}.component1" value="{{recipe.component1}}" placeholder="Component 1">
+        </div>
+        <div class="field">
+          <input type="text" name="system.recipes.{{index}}.component2" value="{{recipe.component2}}" placeholder="Component 2">
+        </div>
+        <div class="field">
+          <input type="text" name="system.recipes.{{index}}.component3" value="{{recipe.component3}}" placeholder="Component 3">
+        </div>
+        <div class="field">
+          <input type="text" name="system.recipes.{{index}}.component4" value="{{recipe.component4}}" placeholder="Component 4">
+        </div>
+        <i class="fas fa-trash item-control delete-recipe" data-index="{{index}}" title="Delete Recipe"></i>
+      </div>
+    {{/each}}
+  </div>
+</div>
+
+
+------------
+
+
+<form class="lod-actor-sheet">
+  <header class="sheet-header">
+    <div class="portrait">
+      <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" width="100" height="100">
+    </div>
+    <div class="center-container">
+      <div class="row-1">
+        <div class="name-field">
+          <label>Name:</label>
+          <input type="text" name="name" value="{{actor.name}}" placeholder="Character Name">
+        </div>
+        <div class="profession-field">
+          <label>Profession:</label>
+          <input type="text" name="system.profession" value="{{system.profession}}" placeholder="Profession">
+        </div>
+      </div>
+      <div class="row-2">
+        <div class="field">
+          <label>Species:</label>
+          <input type="text" name="system.species" value="{{system.species}}" placeholder="Species">
+        </div>
+        <div class="field">
+          <label>Level:</label>
+          <input type="number" name="system.level" value="{{system.level}}" placeholder="1">
+        </div>
+        <div class="field">
+          <label>XP:</label>
+          <input type="number" name="system.xp" value="{{system.xp}}" placeholder="0">
+        </div>
+      </div>
+      <div class="row-3">
+        <div class="field">
+          <label>Background:</label>
+          <input type="text" name="system.background" value="{{system.background}}" placeholder="Background">
+        </div>
+        <div class="field">
+          <label>Status:</label>
+          <input type="text" name="system.status" value="{{system.status}}" placeholder="Status">
+        </div>
+      </div>
+    </div>
+    <div class="logo">
+      <img src="systems/league-of-dungeoneers/assets/actor-icon.png" alt="League of Dungeoneers Logo" width="100" height="100">
+    </div>
+  </header>
+
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="main">Main</a>
+    <a class="item" data-tab="combat">Combat</a>
+    <a class="item" data-tab="inventory">Inventory</a>
+    <a class="item" data-tab="talents">Talents</a>
+    <a class="item" data-tab="spells">Spells</a>
+    <a class="item" data-tab="prayers">Prayers</a>
+    <a class="item" data-tab="recipes">Recipes</a>
+    <a class="item" data-tab="notes">Notes</a>
+    <a class="item" data-tab="effects">Effects</a>
+  </nav>
+
+  <section class="sheet-body">
+    <div class="tab actor-main" data-group="primary" data-tab="main">
+      {{> "actor-main"}}
+    </div>
+    <div class="tab actor-combat" data-group="primary" data-tab="combat">
+      {{> "actor-combat"}}
+    </div>
+    <div class="tab actor-inventory" data-group="primary" data-tab="inventory">
+      {{> "actor-inventory"}}
+    </div>
+    <div class="tab actor-talents" data-group="primary" data-tab="talents">
+      {{> "actor-talents"}}
+    </div>
+    <div class="tab actor-spells" data-group="primary" data-tab="spells">
+      {{> "actor-spells"}}
+    </div>
+    <div class="tab actor-prayers" data-group="primary" data-tab="prayers">
+      {{> "actor-prayers"}}
+    </div>
+    <div class="tab actor-recipes" data-group="primary" data-tab="recipes">
+      {{> "actor-recipes"}}
+    </div>
+    <div class="tab actor-notes" data-group="primary" data-tab="notes">
+      {{> "actor-notes"}}
+    </div>
+    <div class="tab actor-effects" data-group="primary" data-tab="effects">
+      {{> "actor-effects"}}
+    </div>
+  </section>
+</form>
+
+
+------------
+
+
+<div class="actor-spells">
+  <div class="spell-list">
+    <!-- Level 1 -->
+    <div class="spell-level">
+      <div class="spell-header">
+        <span>Level 1</span>
+        <span>Cast Value</span>
+        <span>Mana</span>
+        <span>Upkeep</span>
+        <span>Special</span>
+        <span>Effect</span>
+      </div>
+      {{#each system.spells.level1 as |spell index|}}
+        <div class="spell-item">
+          <div class="field">
+            <input type="text" name="system.spells.level1.{{index}}.name" value="{{spell.name}}" placeholder="Spell Name">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level1.{{index}}.castValue" value="{{spell.castValue}}" placeholder="10">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level1.{{index}}.mana" value="{{spell.mana}}" placeholder="5">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level1.{{index}}.upkeep" value="{{spell.upkeep}}" placeholder="0">
+          </div>
+          <div class="field">
+            <input type="text" name="system.spells.level1.{{index}}.special" value="{{spell.special}}" placeholder="None">
+          </div>
+          <div class="field">
+            <input type="text" name="system.spells.level1.{{index}}.effect" value="{{spell.effect}}" placeholder="Description">
+          </div>
+        </div>
+      {{/each}}
+    </div>
+    <!-- Level 2 -->
+    <div class="spell-level">
+      <div class="spell-header">
+        <span>Level 2</span>
+        <span>Cast Value</span>
+        <span>Mana</span>
+        <span>Upkeep</span>
+        <span>Special</span>
+        <span>Effect</span>
+      </div>
+      {{#each system.spells.level2 as |spell index|}}
+        <div class="spell-item">
+          <div class="field">
+            <input type="text" name="system.spells.level2.{{index}}.name" value="{{spell.name}}" placeholder="Spell Name">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level2.{{index}}.castValue" value="{{spell.castValue}}" placeholder="12">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level2.{{index}}.mana" value="{{spell.mana}}" placeholder="7">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level2.{{index}}.upkeep" value="{{spell.upkeep}}" placeholder="1">
+          </div>
+          <div class="field">
+            <input type="text" name="system.spells.level2.{{index}}.special" value="{{spell.special}}" placeholder="None">
+          </div>
+          <div class="field">
+            <input type="text" name="system.spells.level2.{{index}}.effect" value="{{spell.effect}}" placeholder="Description">
+          </div>
+        </div>
+      {{/each}}
+    </div>
+    <!-- Level 3 -->
+    <div class="spell-level">
+      <div class="spell-header">
+        <span>Level 3</span>
+        <span>Cast Value</span>
+        <span>Mana</span>
+        <span>Upkeep</span>
+        <span>Special</span>
+        <span>Effect</span>
+      </div>
+      {{#each system.spells.level3 as |spell index|}}
+        <div class="spell-item">
+          <div class="field">
+            <input type="text" name="system.spells.level3.{{index}}.name" value="{{spell.name}}" placeholder="Spell Name">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level3.{{index}}.castValue" value="{{spell.castValue}}" placeholder="14">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level3.{{index}}.mana" value="{{spell.mana}}" placeholder="9">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level3.{{index}}.upkeep" value="{{spell.upkeep}}" placeholder="2">
+          </div>
+          <div class="field">
+            <input type="text" name="system.spells.level3.{{index}}.special" value="{{spell.special}}" placeholder="None">
+          </div>
+          <div class="field">
+            <input type="text" name="system.spells.level3.{{index}}.effect" value="{{spell.effect}}" placeholder="Description">
+          </div>
+        </div>
+      {{/each}}
+    </div>
+    <!-- Level 4 -->
+    <div class="spell-level">
+      <div class="spell-header">
+        <span>Level 4</span>
+        <span>Cast Value</span>
+        <span>Mana</span>
+        <span>Upkeep</span>
+        <span>Special</span>
+        <span>Effect</span>
+      </div>
+      {{#each system.spells.level4 as |spell index|}}
+        <div class="spell-item">
+          <div class="field">
+            <input type="text" name="system.spells.level4.{{index}}.name" value="{{spell.name}}" placeholder="Spell Name">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level4.{{index}}.castValue" value="{{spell.castValue}}" placeholder="16">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level4.{{index}}.mana" value="{{spell.mana}}" placeholder="11">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level4.{{index}}.upkeep" value="{{spell.upkeep}}" placeholder="3">
+          </div>
+          <div class="field">
+            <input type="text" name="system.spells.level4.{{index}}.special" value="{{spell.special}}" placeholder="None">
+          </div>
+          <div class="field">
+            <input type="text" name="system.spells.level4.{{index}}.effect" value="{{spell.effect}}" placeholder="Description">
+          </div>
+        </div>
+      {{/each}}
+    </div>
+    <!-- Level 5 -->
+    <div class="spell-level">
+      <div class="spell-header">
+        <span>Level 5</span>
+        <span>Cast Value</span>
+        <span>Mana</span>
+        <span>Upkeep</span>
+        <span>Special</span>
+        <span>Effect</span>
+      </div>
+      {{#each system.spells.level5 as |spell index|}}
+        <div class="spell-item">
+          <div class="field">
+            <input type="text" name="system.spells.level5.{{index}}.name" value="{{spell.name}}" placeholder="Spell Name">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level5.{{index}}.castValue" value="{{spell.castValue}}" placeholder="18">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level5.{{index}}.mana" value="{{spell.mana}}" placeholder="13">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level5.{{index}}.upkeep" value="{{spell.upkeep}}" placeholder="4">
+          </div>
+          <div class="field">
+            <input type="text" name="system.spells.level5.{{index}}.special" value="{{spell.special}}" placeholder="None">
+          </div>
+          <div class="field">
+            <input type="text" name="system.spells.level5.{{index}}.effect" value="{{spell.effect}}" placeholder="Description">
+          </div>
+        </div>
+      {{/each}}
+    </div>
+    <!-- Level 6 -->
+    <div class="spell-level">
+      <div class="spell-header">
+        <span>Level 6</span>
+        <span>Cast Value</span>
+        <span>Mana</span>
+        <span>Upkeep</span>
+        <span>Special</span>
+        <span>Effect</span>
+      </div>
+      {{#each system.spells.level6 as |spell index|}}
+        <div class="spell-item">
+          <div class="field">
+            <input type="text" name="system.spells.level6.{{index}}.name" value="{{spell.name}}" placeholder="Spell Name">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level6.{{index}}.castValue" value="{{spell.castValue}}" placeholder="20">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level6.{{index}}.mana" value="{{spell.mana}}" placeholder="15">
+          </div>
+          <div class="field">
+            <input type="number" name="system.spells.level6.{{index}}.upkeep" value="{{spell.upkeep}}" placeholder="5">
+          </div>
+          <div class="field">
+            <input type="text" name="system.spells.level6.{{index}}.special" value="{{spell.special}}" placeholder="None">
+          </div>
+          <div class="field">
+            <input type="text" name="system.spells.level6.{{index}}.effect" value="{{spell.effect}}" placeholder="Description">
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+
+------------
+
+
+<div class="actor-talents">
+  <div class="talents-list">
+    <h3>Talents</h3>
+    <div class="talent-header">
+      <span>Name</span>
+      <span>Type</span>
+      <span>Effect</span>
+    </div>
+    {{#each system.talents as |talent index|}}
+      <div class="talent-item">
+        <div class="field">
+          <input type="text" name="system.talents.{{index}}.name" value="{{talent.name}}" placeholder="Talent Name">
+        </div>
+        <div class="field">
+          <input type="text" name="system.talents.{{index}}.type" value="{{talent.type}}" placeholder="Type">
+        </div>
+        <div class="field">
+          <input type="text" name="system.talents.{{index}}.effect" value="{{talent.effect}}" placeholder="Description">
+        </div>
+      </div>
+    {{/each}}
+  </div>
+  <div class="perks-list">
+    <h3>Perks</h3>
+    <div class="talent-header">
+      <span>Name</span>
+      <span>Type</span>
+      <span>Effect</span>
+    </div>
+    {{#each system.perks as |perk index|}}
+      <div class="talent-item">
+        <div class="field">
+          <input type="text" name="system.perks.{{index}}.name" value="{{perk.name}}" placeholder="Perk Name">
+        </div>
+        <div class="field">
+          <input type="text" name="system.perks.{{index}}.type" value="{{perk.type}}" placeholder="Type">
+        </div>
+        <div class="field">
+          <input type="text" name="system.perks.{{index}}.effect" value="{{perk.effect}}" placeholder="Description">
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>

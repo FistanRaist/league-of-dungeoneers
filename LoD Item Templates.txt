@@ -1,0 +1,364 @@
+<div class="armor-details">
+  <!-- Row 1: Base Type, Covers, Mithril? -->
+  <div class="item-row">
+    <div class="field">
+      <label>Base Type</label>
+      <select name="system.baseType">
+        {{selectOptions baseTypeOptions selected=system.baseType localize=true}}
+      </select>
+    </div>
+    <div class="field">
+      <label>Covers</label>
+      <select name="system.covers">
+        {{selectOptions coversOptions selected=system.covers localize=true}}
+      </select>
+    </div>
+    <div class="field">
+      <label>Mithril?</label>
+      <input name="system.mithril" type="checkbox" {{checked system.mithril}} />
+    </div>
+  </div>
+
+  <!-- Row 2: Defense, Enc, Cost (single row) -->
+  <div class="item-row">
+    <div class="field">
+      <label>Defense</label>
+      <input name="system.protection" type="number" value="{{system.protection}}" placeholder="0" />
+    </div>
+    <div class="field">
+      <label>Enc</label>
+      <input name="system.enc" type="number" value="{{system.enc}}" placeholder="0" />
+    </div>
+    <div class="field">
+      <label>Cost</label>
+      <input name="system.cost" type="number" value="{{system.cost}}" placeholder="0" />
+    </div>
+  </div>
+
+  <!-- Row 3: Special -->
+  <div class="item-row">
+    <div class="field full-width">
+      <label>Special</label>
+      <input name="system.special" type="text" value="{{system.special}}" placeholder="Special" />
+    </div>
+  </div>
+
+  <!-- Row 4: Tier, Availability, Durability -->
+  <div class="item-row">
+    <div class="field">
+      <label>Tier</label>
+      <select name="system.tier">
+        {{selectOptions tierOptions selected=system.tier localize=true}}
+      </select>
+    </div>
+    <div class="field">
+      <label>Availability</label>
+      <select name="system.availability">
+        {{selectOptions availabilityOptions selected=system.availability localize=true}}
+      </select>
+    </div>
+    <div class="field">
+      <label>Durability</label>
+      <input name="system.durability" type="number" value="{{system.durability}}" placeholder="0" />
+    </div>
+  </div>
+</div>
+
+
+------------
+
+
+<div class="background-details">
+  <!-- Row 1: Trait -->
+  <div class="item-row">
+    <div class="field full-width">
+      <label>Trait</label>
+      <input name="system.trait" type="text" value="{{system.trait}}" placeholder="Trait" />
+    </div>
+  </div>
+
+  <!-- Row 2: Personal Quest -->
+  <div class="item-row">
+    <div class="field full-width">
+      <label>Personal Quest</label>
+      <input name="system.personalQuest" type="text" value="{{system.personalQuest}}" placeholder="Personal Quest" />
+    </div>
+  </div>
+</div>
+
+
+------------
+
+
+<div class="equipment-details">
+  <!-- Row 1: Quantity | Enc | Cost -->
+  <div class="item-row row-compact">
+    <div class="field">
+      <label>Quantity</label>
+      <input name="system.quantity" type="number" value="{{system.quantity}}" placeholder="0" />
+    </div>
+    <div class="field">
+      <label>Enc</label>
+      <input name="system.enc" type="number" value="{{system.enc}}" placeholder="0" />
+    </div>
+    <div class="field">
+      <label>Cost</label>
+      <input name="system.cost" type="number" value="{{system.cost}}" placeholder="0" />
+    </div>
+  </div>
+
+  <!-- Row 2: Ammo? | Treasure? -->
+  <div class="item-row row-compact">
+    <div class="field">
+      <label>Ammo?</label>
+      <input name="system.ammo" type="checkbox" {{checked system.ammo}} />
+    </div>
+    <div class="field">
+      <label>Treasure?</label>
+      <input name="system.treasure" type="checkbox" {{checked system.treasure}} />
+    </div>
+  </div>
+
+  <!-- Row 3: Special -->
+  <div class="item-row">
+    <div class="field full-width">
+      <label>Special</label>
+      <input name="system.special" type="text" value="{{system.special}}" placeholder="Special" />
+    </div>
+  </div>
+
+  <!-- Row 4: Availability | Durability -->
+  <div class="item-row row-compact">
+    <div class="field">
+      <label>Availability</label>
+      <select name="system.availability">
+        {{selectOptions availabilityOptions selected=system.availability localize=true}}
+      </select>
+    </div>
+    <div class="field">
+      <label>Durability</label>
+      <input name="system.dur" type="number" value="{{system.dur}}" placeholder="0" />
+    </div>
+  </div>
+</div>
+
+
+------------
+
+
+<div class="ingredient-details">
+  <!-- Row 1: Quantity | Enc | Cost | Monster Part? | Exquisite? -->
+  <div class="item-row">
+    <div class="field">
+      <label>Quantity</label>
+      <input name="system.quantity" type="number" value="{{system.quantity}}" placeholder="0" />
+    </div>
+    <div class="field">
+      <label>Enc</label>
+      <input name="system.enc" type="number" value="{{system.enc}}" placeholder="0" />
+    </div>
+    <div class="field">
+      <label>Cost</label>
+      <input name="system.cost" type="number" value="{{system.cost}}" placeholder="0" />
+    </div>
+    <div class="field">
+      <label>Monster Part?</label>
+      <input name="system.monsterPart" type="checkbox" {{checked system.monsterPart}} />
+    </div>
+    <div class="field">
+      <label>Exquisite?</label>
+      <input name="system.exquisite" type="checkbox" {{checked system.exquisite}} />
+    </div>
+  </div>
+</div>
+
+
+------------
+
+
+<div class="perk-details">
+  <!-- Row 1: Type -->
+  <div class="item-row">
+    <div class="field full-width">
+      <label>Type</label>
+      <input name="system.type" type="text" value="{{system.type}}" placeholder="Type" />
+    </div>
+  </div>
+</div>
+
+
+------------
+
+
+<div class="item-potion">
+    <label>ENC: <input name="system.enc" type="number" value="{{system.enc}}" /></label>
+    <label>Cost: <input name="system.cost" type="number" value="{{system.cost}}" /></label>
+    <label>Identified?: <input name="system.identified" type="checkbox" {{checked system.identified}} /></label>
+    <label>Effect: <input name="system.effect" type="text" value="{{system.effect}}" /></label>
+  </div>
+
+
+------------
+
+
+<div class="item-prayer">
+    <label>Level: <input name="system.level" type="number" value="{{system.level}}" /></label>
+    <label>Effect: <input name="system.effect" type="text" value="{{system.effect}}" /></label>
+  </div>
+
+
+------------
+
+
+<div class="item-profession">
+    <label>Talents: <input name="system.talents" type="text" value="{{system.talents}}" /></label>
+    <label>Perks: <input name="system.perks" type="text" value="{{system.perks}}" /></label>
+    <label>Starting Equipment: <input name="system.startingEquipment" type="text" value="{{system.startingEquipment}}" /></label>
+    <label>Limitations: <input name="system.limitations" type="text" value="{{system.limitations}}" /></label>
+    <h3>Skill Modifiers</h3>
+    <label>Combat Skill: <input name="system.skills.combatSkill" type="number" value="{{system.skills.combatSkill}}" /></label>
+    <label>Ranged Skill: <input name="system.skills.rangedSkill" type="number" value="{{system.skills.rangedSkill}}" /></label>
+    <label>Dodge: <input name="system.skills.dodge" type="number" value="{{system.skills.dodge}}" /></label>
+    <label>Pick Locks: <input name="system.skills.pickLocks" type="number" value="{{system.skills.pickLocks}}" /></label>
+    <label>Barter: <input name="system.skills.barter" type="number" value="{{system.skills.barter}}" /></label>
+    <label>Heal: <input name="system.skills.heal" type="number" value="{{system.skills.heal}}" /></label>
+    <label>Alchemy: <input name="system.skills.alchemy" type="number" value="{{system.skills.alchemy}}" /></label>
+    <label>Perception: <input name="system.skills.perception" type="number" value="{{system.skills.perception}}" /></label>
+    <label>Arcane Art: <input name="system.skills.arcaneArt" type="text" value="{{system.skills.arcaneArt}}" /></label>
+    <label>Foraging: <input name="system.skills.foraging" type="number" value="{{system.skills.foraging}}" /></label>
+    <label>Battle Prayers: <input name="system.skills.battlePrayers" type="text" value="{{system.skills.battlePrayers}}" /></label>
+    <label>Hit Points: <input name="system.skills.hitPoints" type="number" value="{{system.skills.hitPoints}}" /></label>
+  </div>
+
+
+------------
+
+
+<div class="item-race">
+    <label>STR Formula: <input name="system.stats.str" type="text" value="{{system.stats.str}}" /></label>
+    <label>CON Formula: <input name="system.stats.con" type="text" value="{{system.stats.con}}" /></label>
+    <label>DEX Formula: <input name="system.stats.dex" type="text" value="{{system.stats.dex}}" /></label>
+    <label>WIS Formula: <input name="system.stats.wis" type="text" value="{{system.stats.wis}}" /></label>
+    <label>RES Formula: <input name="system.stats.res" type="text" value="{{system.stats.res}}" /></label>
+    <label>Traits: <input name="system.traits" type="text" value="{{system.traits}}" /></label>
+    <label>Limitations: <input name="system.limitations" type="text" value="{{system.limitations}}" /></label>
+    <label>Hit Die: <input name="system.hitDie" type="text" value="{{system.hitDie}}" /></label>
+  </div>
+
+
+------------
+
+
+<form class="lod-item-sheet" autocomplete="off">
+  <header class="sheet-header">
+    <img class="portrait" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+    <div class="header-fields">
+      <h1 class="item-name"><input name="name" type="text" value="{{item.name}}" placeholder="Item Name" /></h1>
+    </div>
+  </header>
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="details">Details</a>
+    <a class="item" data-tab="description">Description</a>
+    <a class="item" data-tab="effect">Effect</a>
+  </nav>
+  <section class="sheet-body">
+    <div class="tab" data-tab="details" data-group="primary">
+      {{> (lookup partials item.type)}}
+    </div>
+    <div class="tab" data-tab="description" data-group="primary">
+      {{editor system.description target="system.description" button=true owner=owner editable=editable engine="none"}}
+    </div>
+    <div class="tab" data-tab="effect" data-group="primary">
+      <div class="field-group">
+        <label>Effect</label>
+        <textarea name="system.effect">{{system.effect}}</textarea>
+      </div>
+    </div>
+  </section>
+</form>
+
+
+------------
+
+
+<div class="item-spell">
+    <label>CV: <input name="system.cv" type="number" value="{{system.cv}}" /></label>
+    <label>Mana: <input name="system.mana" type="number" value="{{system.mana}}" /></label>
+    <label>Upkeep: <input name="system.upkeep" type="text" value="{{system.upkeep}}" /></label>
+    <label>Special: <input name="system.special" type="text" value="{{system.special}}" /></label>
+    <label>School: <input name="system.school" type="text" value="{{system.school}}" /></label>
+  </div>
+
+
+------------
+
+
+<div class="item-talent">
+    <label>Type: <input name="system.type" type="text" value="{{system.type}}" /></label>
+    <label>Effect: <input name="system.effect" type="text" value="{{system.effect}}" /></label>
+    <label>Comment: <input name="system.comment" type="text" value="{{system.comment}}" /></label>
+  </div>
+
+
+------------
+
+
+<div class="weapon-details">
+  <!-- Row 1: Damage, Reload, Mithril? -->
+  <div class="item-row">
+    <div class="field">
+      <label>Damage</label>
+      <input name="system.dmg" type="text" value="{{system.dmg}}" placeholder="Damage" />
+    </div>
+    <div class="field">
+      <label>Reload</label>
+      <select name="system.reload">
+        {{selectOptions reloadOptions selected=system.reload localize=true}}
+      </select>
+    </div>
+    <div class="field">
+      <label>Mithril?</label>
+      <input name="system.mithril" type="checkbox" {{checked system.mithril}} />
+    </div>
+  </div>
+
+  <!-- Row 2: Class, Enc, Cost -->
+  <div class="item-row">
+    <div class="field">
+      <label>Class</label>
+      <select name="system.class">
+        {{selectOptions classOptions selected=system.class localize=true}}
+      </select>
+    </div>
+    <div class="field">
+      <label>Enc</label>
+      <input name="system.enc" type="number" value="{{system.enc}}" placeholder="0" />
+    </div>
+    <div class="field">
+      <label>Cost</label>
+      <input name="system.cost" type="number" value="{{system.cost}}" placeholder="0" />
+    </div>
+  </div>
+
+  <!-- Row 3: Special -->
+  <div class="item-row">
+    <div class="field full-width">
+      <label>Special</label>
+      <input name="system.special" type="text" value="{{system.special}}" placeholder="Special" />
+    </div>
+  </div>
+
+  <!-- Row 4: Availability, Durability -->
+  <div class="item-row">
+    <div class="field">
+      <label>Availability</label>
+      <select name="system.availability">
+        {{selectOptions availabilityOptions selected=system.availability localize=true}}
+      </select>
+    </div>
+    <div class="field">
+      <label>Durability</label>
+      <input name="system.durability" type="number" value="{{system.durability}}" placeholder="6" />
+    </div>
+  </div>
+</div>

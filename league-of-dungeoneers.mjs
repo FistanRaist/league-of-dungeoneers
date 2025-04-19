@@ -1,7 +1,8 @@
 console.log("Loading League of Dungeoneers system");
 
-import { LODActorSheet } from "./module/actor-sheet.mjs";
-import { LODItemSheet } from "./module/item-sheet.mjs";
+import { LODActorSheet } from "./modules/actor-sheet.mjs";
+import { LODItemSheet } from "./modules/item-sheet.mjs";
+import "./modules/overlay.mjs";
 
 CONFIG.debug.hooks = true;
 
@@ -20,7 +21,10 @@ Hooks.once("init", async () => {
     "actor-prayers": "systems/league-of-dungeoneers/templates/actor/actor-prayers.html",
     "actor-recipes": "systems/league-of-dungeoneers/templates/actor/actor-recipes.html",
     "actor-notes": "systems/league-of-dungeoneers/templates/actor/actor-notes.html",
-    "actor-effects": "systems/league-of-dungeoneers/templates/actor/actor-effects.html"
+    "actor-effects": "systems/league-of-dungeoneers/templates/actor/actor-effects.html",
+    "actor-monster-main": "systems/league-of-dungeoneers/templates/actor/actor-monster-main.html",
+    "actor-monster-combat": "systems/league-of-dungeoneers/templates/actor/actor-monster-combat.html",
+    "actor-monster-notes": "systems/league-of-dungeoneers/templates/actor/actor-monster-notes.html"
   };
 
   // Define paths to item partial templates
@@ -36,23 +40,33 @@ Hooks.once("init", async () => {
     "perk": "systems/league-of-dungeoneers/templates/item/item-perk.html",
     "profession": "systems/league-of-dungeoneers/templates/item/item-profession.html",
     "race": "systems/league-of-dungeoneers/templates/item/item-race.html",
-    "background": "systems/league-of-dungeoneers/templates/item/item-background.html"
+    "background": "systems/league-of-dungeoneers/templates/item/item-background.html",
+    "specialRule": "systems/league-of-dungeoneers/templates/item/item-special-rule.html"
   };
 
   // Load all partial templates
   await loadTemplates({ ...actorPartials, ...itemPartials });
   console.log("Templates loaded");
 
+  // Register Actor Sheets
   Actors.registerSheet("league-of-dungeoneers", LODActorSheet, {
     types: ["character"],
     makeDefault: true,
     label: "LOD.CharacterSheet"
   });
-  console.log("Actor sheet registered successfully");
-  console.log("Registered actor sheets:", Array.from(Actors.registeredSheets.keys()));
 
+  Actors.registerSheet("league-of-dungeoneers", LODActorSheet, {
+    types: ["monster"],
+    makeDefault: true,
+    label: "LOD.MonsterSheet"
+  });
+  console.log("Actor sheets registered successfully");
+  console.log("Registered actor sheets:", Array.from(Actors.registeredSheets.keys()));
+  console.log("Expected actor types: ['character', 'monster']");
+
+  // Register Item Sheets
   Items.registerSheet("league-of-dungeoneers", LODItemSheet, {
-    types: ["weapon", "armor", "equipment", "ingredient", "potion", "spell", "prayer", "talent", "perk", "profession", "race", "background"],
+    types: ["weapon", "armor", "equipment", "ingredient", "potion", "spell", "prayer", "talent", "perk", "profession", "race", "background", "specialRule"],
     makeDefault: true,
     label: "LOD.ItemSheet"
   });
@@ -66,13 +80,13 @@ Hooks.once("ready", () => {
 });
 
 Hooks.on("preCreateActor", (actor, data, options) => {
-  console.log("preCreateActor hook fired, data before:", data);
+  console.log("preCreateActor hook fired, data before:", JSON.stringify(data, null, 2));
   if (!data.type) {
     data.type = "character";
     console.log("preCreateActor: Set type to 'character'");
   }
 
-  const defaultSystemData = {
+  const defaultCharacterData = {
     abilities: {
       strength: { value: 0, damageBonus: 0 },
       dexterity: { value: 0, naturalArmor: 0 },
@@ -111,6 +125,34 @@ Hooks.on("preCreateActor", (actor, data, options) => {
     notes: ""
   };
 
-  actor.system = foundry.utils.mergeObject(defaultSystemData, data.system || {});
-  console.log("preCreateActor, data after:", data);
+  const defaultMonsterData = {
+    type: "",
+    number: "",
+    xp: 0,
+    loot: "",
+    stats: {
+      cs: 0,
+      rs: 0,
+      hp: 0,
+      dmg: "",
+      na: 0,
+      m: 0,
+      dex: 0,
+      res: 0,
+      toHit: 0
+    },
+    weapons: [],
+    armor: [],
+    specialRules: [],
+    notes: ""
+  };
+
+  if (data.type === "character") {
+    actor.system = foundry.utils.mergeObject(defaultCharacterData, data.system || {});
+  } else if (data.type === "monster") {
+    actor.system = foundry.utils.mergeObject(defaultMonsterData, data.system || {});
+  }
+
+  console.log("preCreateActor, data after:", JSON.stringify(data, null, 2));
+  console.log("preCreateActor, actor type after:", actor.type);
 });
