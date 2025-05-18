@@ -1,0 +1,96 @@
+<form class="lod-actor-sheet" autocomplete="off">
+  <header class="sheet-header">
+      <img class="portrait" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+      <div class="center-container">
+          <div class="row-1">
+              <div class="name-field">
+                  <label>Name</label>
+                  <input name="name" type="text" value="{{actor.name}}" placeholder="Name" />
+              </div>
+              <div class="profession-field">
+                  <label>Profession</label>
+                  <input name="system.profession" type="text" value="{{system.profession}}" placeholder="Profession" />
+              </div>
+          </div>
+          <div class="row-2">
+              <div class="field">
+                  <label>Species</label>
+                  <input name="system.species" type="text" value="{{system.species}}" placeholder="Species" />
+              </div>
+              <div class="field">
+                  <label>Level</label>
+                  <input name="system.level" type="number" value="{{system.level}}" placeholder="Level" />
+              </div>
+              <div class="field">
+                  <label>XP</label>
+                  <input name="system.xp" type="number" value="{{system.xp}}" placeholder="XP" />
+              </div>
+          </div>
+          <div class="row-3">
+              <div class="field">
+                  <label>Background</label>
+                  <input name="system.background" type="text" value="{{system.background}}" placeholder="Background" />
+              </div>
+              <div class="field">
+                  <label>Status</label>
+                  <input name="system.status" type="text" value="{{system.status}}" placeholder="Status" />
+              </div>
+          </div>
+      </div>
+      <div class="logo">
+          <img src="systems/league-of-dungeoneers/assets/logo.png" />
+      </div>
+  </header>
+
+  <!-- Divider above tabs -->
+  <div class="h-divider">
+      <div class="shadow"></div>
+  </div>
+
+  <nav class="sheet-tabs tabs" data-group="primary">
+      <a class="item" data-tab="main">Main</a>
+      <a class="item" data-tab="combat">Combat</a>
+      <a class="item" data-tab="inventory">Inventory</a>
+      <a class="item" data-tab="talents">Talents</a>
+      <a class="item" data-tab="spells">Spells</a>
+      <a class="item" data-tab="prayers">Prayers</a>
+      <a class="item" data-tab="recipes">Recipes</a>
+      <a class="item" data-tab="notes">Notes</a>
+      <a class="item" data-tab="effects">Effects</a>
+  </nav>
+
+  <!-- Divider below tabs -->
+  <div class="h-divider">
+      <div class="shadow"></div>
+  </div>
+
+  <section class="sheet-body">
+      <div class="tab" data-group="primary" data-tab="main">
+          {{> "actor-main"}}
+      </div>
+      <div class="tab" data-group="primary" data-tab="combat">
+          {{> "actor-combat"}}
+      </div>
+      <div class="tab" data-group="primary" data-tab="inventory">
+          {{> "actor-inventory"}}
+      </div>
+      <div class="tab" data-group="primary" data-tab="talents">
+          {{> "actor-talents"}}
+      </div>
+      <div class="tab" data-group="primary" data-tab="spells">
+          {{> "actor-spells"}}
+      </div>
+      <div class="tab" data-group="primary" data-tab="prayers">
+          {{> "actor-prayers"}}
+      </div>
+      <div class="tab" data-group="primary" data-tab="recipes">
+          {{> "actor-recipes"}}
+      </div>
+      <div class="tab" data-group="primary" data-tab="notes">
+          {{> "actor-notes"}}
+      </div>
+      <div class="tab" data-group="primary" data-tab="effects">
+          {{> "actor-effects"}}
+      </div>
+  </section>
+</form>
